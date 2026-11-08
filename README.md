@@ -2,7 +2,7 @@
 
 Multi-sector simulation testing how an AI frontier lab—and the surrounding agent economy—should govern scarce GPU capacity when **tokens act simultaneously as a physical commodity and working capital**.
 
-**[Live Interactive Compute Monetary Monitor →](https://strangeloopcanon.github.io/tokenfed/)** · **[Full Benchmark Tables →](results/summary.md)**
+**[Read the Essay (*Strange Loop Canon*) →](https://www.strangeloopcanon.com/p/the-token-fed)** · **[Live Interactive Compute Monetary Monitor →](https://strangeloopcanon.github.io/tokenfed/)** · **[Full Benchmark Tables →](results/summary.md)**
 
 Across **`48` five-round episodes (`2,304` real Python coding & unit-test tasks · `4,977` live LLM turns)**, `1` frontier lab (`~59.7k`-token cluster split between internal R&D and public APIs) serves `12` autonomous AI firms across four cohorts:
 - **`3` Enterprises** — Pre-purchased reserved throughput blocks (`PTUs` / `Scale Tier`) plus urgent P0 production incidents.
