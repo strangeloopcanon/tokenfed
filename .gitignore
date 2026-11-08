@@ -1,0 +1,12 @@
+.venv/
+.agy_cwd/
+__pycache__/
+*.pyc
+.DS_Store
+dist/
+build/
+*.egg-info/
+*.tmp
+.pytest_cache/
+.ruff_cache/
+uv.lock

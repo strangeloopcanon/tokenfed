@@ -1,0 +1,3875 @@
+{
+  "source_file": "benchmark_runs.json",
+  "n_total_episodes": 48,
+  "models": [
+    "argon",
+    "flash"
+  ],
+  "runner_telemetry": {
+    "total_agy_calls": 4977,
+    "total_output_tokens": 3481221,
+    "total_thinking_tokens": 2326456,
+    "downgraded_calls": 0,
+    "retry_events": 2,
+    "elapsed_wall_seconds": 5439.19
+  },
+  "overall_by_regime": {
+    "flat_today": {
+      "label": "1. Today (Flat + Silos)",
+      "n_episodes": 12,
+      "net_total_value": {
+        "mean": 76.808,
+        "sd": 6.467,
+        "ci95": [
+          73.315,
+          79.993
+        ]
+      },
+      "gross_total_value": {
+        "mean": 76.808,
+        "sd": 6.467,
+        "ci95": [
+          73.315,
+          79.993
+        ]
+      },
+      "external_real_value": {
+        "mean": 57.479,
+        "sd": 6.133,
+        "ci95": [
+          54.137,
+          60.508
+        ]
+      },
+      "max_external_value": {
+        "mean": 115.65,
+        "sd": 7.577,
+        "ci95": [
+          111.45,
+          119.675
+        ]
+      },
+      "training_real_value": {
+        "mean": 19.329,
+        "sd": 1.161,
+        "ci95": [
+          18.704,
+          19.954
+        ]
+      },
+      "fiscal_deficit_penalty": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "public_fiscal_margin": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "high_impact_on_time_pct": {
+        "mean": 53.857,
+        "sd": 6.076,
+        "ci95": [
+          50.558,
+          56.995
+        ]
+      },
+      "science_on_time_pct": {
+        "mean": 40.277,
+        "sd": 11.817,
+        "ci95": [
+          34.256,
+          46.991
+        ]
+      },
+      "startup_on_time_pct": {
+        "mean": 37.5,
+        "sd": 13.641,
+        "ci95": [
+          30.001,
+          44.86
+        ]
+      },
+      "enterprise_on_time_pct": {
+        "mean": 83.334,
+        "sd": 14.714,
+        "ci95": [
+          74.568,
+          89.936
+        ]
+      },
+      "swarm_on_time_pct": {
+        "mean": 36.903,
+        "sd": 11.145,
+        "ci95": [
+          30.952,
+          42.857
+        ]
+      },
+      "builder_tested_pct": {
+        "mean": 92.588,
+        "sd": 2.515,
+        "ci95": [
+          91.225,
+          93.962
+        ]
+      },
+      "broken_prod_total": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "cluster_utilization_pct": {
+        "mean": 71.07,
+        "sd": 1.704,
+        "ci95": [
+          70.12,
+          71.978
+        ]
+      },
+      "avg_training_tokens": {
+        "mean": 3345.067,
+        "sd": 246.554,
+        "ci95": [
+          3213.467,
+          3476.667
+        ]
+      },
+      "total_borrowed_credits": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "unpaid_loan_defaults": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "pure_market": {
+      "label": "2. Pure Market (Auction + Sublease)",
+      "n_episodes": 12,
+      "net_total_value": {
+        "mean": 88.154,
+        "sd": 12.42,
+        "ci95": [
+          81.143,
+          95.043
+        ]
+      },
+      "gross_total_value": {
+        "mean": 88.154,
+        "sd": 12.42,
+        "ci95": [
+          81.143,
+          95.043
+        ]
+      },
+      "external_real_value": {
+        "mean": 68.825,
+        "sd": 11.431,
+        "ci95": [
+          62.446,
+          75.142
+        ]
+      },
+      "max_external_value": {
+        "mean": 115.65,
+        "sd": 7.577,
+        "ci95": [
+          111.45,
+          119.675
+        ]
+      },
+      "training_real_value": {
+        "mean": 19.329,
+        "sd": 1.161,
+        "ci95": [
+          18.704,
+          19.954
+        ]
+      },
+      "fiscal_deficit_penalty": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "public_fiscal_margin": {
+        "mean": 1.462,
+        "sd": 0.391,
+        "ci95": [
+          1.251,
+          1.679
+        ]
+      },
+      "high_impact_on_time_pct": {
+        "mean": 63.602,
+        "sd": 9.243,
+        "ci95": [
+          58.416,
+          68.633
+        ]
+      },
+      "science_on_time_pct": {
+        "mean": 28.935,
+        "sd": 16.771,
+        "ci95": [
+          19.907,
+          38.425
+        ]
+      },
+      "startup_on_time_pct": {
+        "mean": 68.75,
+        "sd": 19.465,
+        "ci95": [
+          58.472,
+          79.862
+        ]
+      },
+      "enterprise_on_time_pct": {
+        "mean": 86.959,
+        "sd": 12.516,
+        "ci95": [
+          80.087,
+          93.398
+        ]
+      },
+      "swarm_on_time_pct": {
+        "mean": 88.097,
+        "sd": 17.274,
+        "ci95": [
+          78.838,
+          96.958
+        ]
+      },
+      "builder_tested_pct": {
+        "mean": 88.884,
+        "sd": 7.487,
+        "ci95": [
+          84.613,
+          92.848
+        ]
+      },
+      "broken_prod_total": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "cluster_utilization_pct": {
+        "mean": 76.549,
+        "sd": 6.15,
+        "ci95": [
+          73.233,
+          79.956
+        ]
+      },
+      "avg_training_tokens": {
+        "mean": 3345.067,
+        "sd": 246.554,
+        "ci95": [
+          3213.467,
+          3476.667
+        ]
+      },
+      "total_borrowed_credits": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "unpaid_loan_defaults": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "rule_fed": {
+      "label": "3. Rule-Based Fed (Static Formula)",
+      "n_episodes": 12,
+      "net_total_value": {
+        "mean": 94.76,
+        "sd": 9.02,
+        "ci95": [
+          89.932,
+          99.618
+        ]
+      },
+      "gross_total_value": {
+        "mean": 94.76,
+        "sd": 9.02,
+        "ci95": [
+          89.932,
+          99.618
+        ]
+      },
+      "external_real_value": {
+        "mean": 82.221,
+        "sd": 8.677,
+        "ci95": [
+          77.533,
+          86.9
+        ]
+      },
+      "max_external_value": {
+        "mean": 115.65,
+        "sd": 7.577,
+        "ci95": [
+          111.45,
+          119.675
+        ]
+      },
+      "training_real_value": {
+        "mean": 12.539,
+        "sd": 0.53,
+        "ci95": [
+          12.259,
+          12.818
+        ]
+      },
+      "fiscal_deficit_penalty": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "public_fiscal_margin": {
+        "mean": 1.211,
+        "sd": 0.138,
+        "ci95": [
+          1.133,
+          1.29
+        ]
+      },
+      "high_impact_on_time_pct": {
+        "mean": 75.097,
+        "sd": 6.288,
+        "ci95": [
+          71.772,
+          78.477
+        ]
+      },
+      "science_on_time_pct": {
+        "mean": 49.999,
+        "sd": 18.12,
+        "ci95": [
+          40.044,
+          59.722
+        ]
+      },
+      "startup_on_time_pct": {
+        "mean": 74.027,
+        "sd": 16.52,
+        "ci95": [
+          64.861,
+          82.498
+        ]
+      },
+      "enterprise_on_time_pct": {
+        "mean": 96.862,
+        "sd": 4.96,
+        "ci95": [
+          93.886,
+          99.405
+        ]
+      },
+      "swarm_on_time_pct": {
+        "mean": 82.143,
+        "sd": 24.141,
+        "ci95": [
+          68.783,
+          95.107
+        ]
+      },
+      "builder_tested_pct": {
+        "mean": 95.097,
+        "sd": 6.018,
+        "ci95": [
+          91.678,
+          98.233
+        ]
+      },
+      "broken_prod_total": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "cluster_utilization_pct": {
+        "mean": 71.235,
+        "sd": 5.694,
+        "ci95": [
+          68.289,
+          74.422
+        ]
+      },
+      "avg_training_tokens": {
+        "mean": 1902.917,
+        "sd": 111.605,
+        "ci95": [
+          1844.083,
+          1961.6
+        ]
+      },
+      "total_borrowed_credits": {
+        "mean": 2362.5,
+        "sd": 1420.647,
+        "ci95": [
+          1608.333,
+          3125.0
+        ]
+      },
+      "unpaid_loan_defaults": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "llm_fed": {
+      "label": "4. AI Token Fed (Live Governor)",
+      "n_episodes": 12,
+      "net_total_value": {
+        "mean": 99.589,
+        "sd": 10.721,
+        "ci95": [
+          93.513,
+          105.646
+        ]
+      },
+      "gross_total_value": {
+        "mean": 99.589,
+        "sd": 10.721,
+        "ci95": [
+          93.513,
+          105.646
+        ]
+      },
+      "external_real_value": {
+        "mean": 85.75,
+        "sd": 10.878,
+        "ci95": [
+          79.858,
+          92.038
+        ]
+      },
+      "max_external_value": {
+        "mean": 115.65,
+        "sd": 7.577,
+        "ci95": [
+          111.45,
+          119.675
+        ]
+      },
+      "training_real_value": {
+        "mean": 13.839,
+        "sd": 2.423,
+        "ci95": [
+          12.628,
+          15.209
+        ]
+      },
+      "fiscal_deficit_penalty": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "public_fiscal_margin": {
+        "mean": 1.279,
+        "sd": 0.277,
+        "ci95": [
+          1.132,
+          1.436
+        ]
+      },
+      "high_impact_on_time_pct": {
+        "mean": 76.737,
+        "sd": 7.838,
+        "ci95": [
+          72.424,
+          80.978
+        ]
+      },
+      "science_on_time_pct": {
+        "mean": 67.13,
+        "sd": 16.105,
+        "ci95": [
+          58.795,
+          76.159
+        ]
+      },
+      "startup_on_time_pct": {
+        "mean": 66.388,
+        "sd": 14.245,
+        "ci95": [
+          58.749,
+          74.442
+        ]
+      },
+      "enterprise_on_time_pct": {
+        "mean": 95.671,
+        "sd": 7.212,
+        "ci95": [
+          91.342,
+          99.243
+        ]
+      },
+      "swarm_on_time_pct": {
+        "mean": 79.365,
+        "sd": 24.064,
+        "ci95": [
+          65.74,
+          91.668
+        ]
+      },
+      "builder_tested_pct": {
+        "mean": 96.328,
+        "sd": 7.44,
+        "ci95": [
+          91.712,
+          99.703
+        ]
+      },
+      "broken_prod_total": {
+        "mean": 0.167,
+        "sd": 0.389,
+        "ci95": [
+          0.0,
+          0.417
+        ]
+      },
+      "cluster_utilization_pct": {
+        "mean": 74.078,
+        "sd": 5.33,
+        "ci95": [
+          71.324,
+          77.108
+        ]
+      },
+      "avg_training_tokens": {
+        "mean": 2176.667,
+        "sd": 510.051,
+        "ci95": [
+          1921.667,
+          2465.0
+        ]
+      },
+      "total_borrowed_credits": {
+        "mean": 5543.75,
+        "sd": 4823.123,
+        "ci95": [
+          3295.833,
+          8393.75
+        ]
+      },
+      "unpaid_loan_defaults": {
+        "mean": 100.0,
+        "sd": 346.41,
+        "ci95": [
+          0.0,
+          300.0
+        ]
+      }
+    }
+  },
+  "by_world": {
+    "supply_shock": {
+      "label": "Hardware Crunch",
+      "by_regime": {
+        "flat_today": {
+          "label": "1. Today (Flat + Silos)",
+          "n_episodes": 4,
+          "net_total_value": {
+            "mean": 73.03,
+            "sd": 7.253,
+            "ci95": [
+              67.118,
+              78.943
+            ]
+          },
+          "gross_total_value": {
+            "mean": 73.03,
+            "sd": 7.253,
+            "ci95": [
+              67.118,
+              78.943
+            ]
+          },
+          "external_real_value": {
+            "mean": 55.262,
+            "sd": 7.253,
+            "ci95": [
+              49.35,
+              61.175
+            ]
+          },
+          "max_external_value": {
+            "mean": 114.75,
+            "sd": 0.0,
+            "ci95": [
+              114.75,
+              114.75
+            ]
+          },
+          "training_real_value": {
+            "mean": 17.768,
+            "sd": 0.0,
+            "ci95": [
+              17.768,
+              17.768
+            ]
+          },
+          "fiscal_deficit_penalty": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "public_fiscal_margin": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "ci95": [
+              1.0,
+              1.0
+            ]
+          },
+          "high_impact_on_time_pct": {
+            "mean": 50.715,
+            "sd": 7.869,
+            "ci95": [
+              44.285,
+              57.145
+            ]
+          },
+          "science_on_time_pct": {
+            "mean": 47.22,
+            "sd": 13.984,
+            "ci95": [
+              36.108,
+              61.112
+            ]
+          },
+          "startup_on_time_pct": {
+            "mean": 25.003,
+            "sd": 11.785,
+            "ci95": [
+              16.67,
+              35.42
+            ]
+          },
+          "enterprise_on_time_pct": {
+            "mean": 75.0,
+            "sd": 22.207,
+            "ci95": [
+              53.572,
+              89.287
+            ]
+          },
+          "swarm_on_time_pct": {
+            "mean": 30.552,
+            "sd": 10.637,
+            "ci95": [
+              22.22,
+              38.885
+            ]
+          },
+          "builder_tested_pct": {
+            "mean": 91.2,
+            "sd": 2.665,
+            "ci95": [
+              89.395,
+              93.75
+            ]
+          },
+          "broken_prod_total": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "cluster_utilization_pct": {
+            "mean": 69.93,
+            "sd": 1.818,
+            "ci95": [
+              68.278,
+              71.578
+            ]
+          },
+          "avg_training_tokens": {
+            "mean": 3012.8,
+            "sd": 0.0,
+            "ci95": [
+              3012.8,
+              3012.8
+            ]
+          },
+          "total_borrowed_credits": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "unpaid_loan_defaults": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "pure_market": {
+          "label": "2. Pure Market (Auction + Sublease)",
+          "n_episodes": 4,
+          "net_total_value": {
+            "mean": 73.293,
+            "sd": 6.884,
+            "ci95": [
+              67.268,
+              79.543
+            ]
+          },
+          "gross_total_value": {
+            "mean": 73.293,
+            "sd": 6.884,
+            "ci95": [
+              67.268,
+              79.543
+            ]
+          },
+          "external_real_value": {
+            "mean": 55.525,
+            "sd": 6.884,
+            "ci95": [
+              49.5,
+              61.775
+            ]
+          },
+          "max_external_value": {
+            "mean": 114.75,
+            "sd": 0.0,
+            "ci95": [
+              114.75,
+              114.75
+            ]
+          },
+          "training_real_value": {
+            "mean": 17.768,
+            "sd": 0.0,
+            "ci95": [
+              17.768,
+              17.768
+            ]
+          },
+          "fiscal_deficit_penalty": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "public_fiscal_margin": {
+            "mean": 1.605,
+            "sd": 0.489,
+            "ci95": [
+              1.181,
+              2.029
+            ]
+          },
+          "high_impact_on_time_pct": {
+            "mean": 52.858,
+            "sd": 5.95,
+            "ci95": [
+              47.855,
+              57.858
+            ]
+          },
+          "science_on_time_pct": {
+            "mean": 16.665,
+            "sd": 14.343,
+            "ci95": [
+              5.555,
+              27.775
+            ]
+          },
+          "startup_on_time_pct": {
+            "mean": 52.082,
+            "sd": 4.165,
+            "ci95": [
+              50.0,
+              56.248
+            ]
+          },
+          "enterprise_on_time_pct": {
+            "mean": 76.785,
+            "sd": 3.57,
+            "ci95": [
+              73.215,
+              78.57
+            ]
+          },
+          "swarm_on_time_pct": {
+            "mean": 66.67,
+            "sd": 12.829,
+            "ci95": [
+              55.56,
+              77.78
+            ]
+          },
+          "builder_tested_pct": {
+            "mean": 85.785,
+            "sd": 9.188,
+            "ci95": [
+              78.095,
+              93.475
+            ]
+          },
+          "broken_prod_total": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "cluster_utilization_pct": {
+            "mean": 70.727,
+            "sd": 4.02,
+            "ci95": [
+              67.34,
+              74.115
+            ]
+          },
+          "avg_training_tokens": {
+            "mean": 3012.8,
+            "sd": 0.0,
+            "ci95": [
+              3012.8,
+              3012.8
+            ]
+          },
+          "total_borrowed_credits": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "unpaid_loan_defaults": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "rule_fed": {
+          "label": "3. Rule-Based Fed (Static Formula)",
+          "n_episodes": 4,
+          "net_total_value": {
+            "mean": 86.338,
+            "sd": 5.983,
+            "ci95": [
+              80.504,
+              89.869
+            ]
+          },
+          "gross_total_value": {
+            "mean": 86.338,
+            "sd": 5.983,
+            "ci95": [
+              80.504,
+              89.869
+            ]
+          },
+          "external_real_value": {
+            "mean": 74.375,
+            "sd": 5.948,
+            "ci95": [
+              68.662,
+              78.05
+            ]
+          },
+          "max_external_value": {
+            "mean": 114.75,
+            "sd": 0.0,
+            "ci95": [
+              114.75,
+              114.75
+            ]
+          },
+          "training_real_value": {
+            "mean": 11.963,
+            "sd": 0.269,
+            "ci95": [
+              11.819,
+              12.23
+            ]
+          },
+          "fiscal_deficit_penalty": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "public_fiscal_margin": {
+            "mean": 1.304,
+            "sd": 0.162,
+            "ci95": [
+              1.165,
+              1.442
+            ]
+          },
+          "high_impact_on_time_pct": {
+            "mean": 69.288,
+            "sd": 4.285,
+            "ci95": [
+              65.002,
+              71.43
+            ]
+          },
+          "science_on_time_pct": {
+            "mean": 52.778,
+            "sd": 16.671,
+            "ci95": [
+              38.885,
+              66.67
+            ]
+          },
+          "startup_on_time_pct": {
+            "mean": 54.168,
+            "sd": 10.758,
+            "ci95": [
+              45.835,
+              62.502
+            ]
+          },
+          "enterprise_on_time_pct": {
+            "mean": 92.858,
+            "sd": 5.834,
+            "ci95": [
+              87.498,
+              98.215
+            ]
+          },
+          "swarm_on_time_pct": {
+            "mean": 50.0,
+            "sd": 6.42,
+            "ci95": [
+              44.44,
+              55.56
+            ]
+          },
+          "builder_tested_pct": {
+            "mean": 91.215,
+            "sd": 6.887,
+            "ci95": [
+              86.0,
+              97.0
+            ]
+          },
+          "broken_prod_total": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "cluster_utilization_pct": {
+            "mean": 66.34,
+            "sd": 2.88,
+            "ci95": [
+              63.53,
+              68.475
+            ]
+          },
+          "avg_training_tokens": {
+            "mean": 1781.75,
+            "sd": 56.642,
+            "ci95": [
+              1751.4,
+              1837.8
+            ]
+          },
+          "total_borrowed_credits": {
+            "mean": 2587.5,
+            "sd": 1323.112,
+            "ci95": [
+              1375.0,
+              3500.0
+            ]
+          },
+          "unpaid_loan_defaults": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "llm_fed": {
+          "label": "4. AI Token Fed (Live Governor)",
+          "n_episodes": 4,
+          "net_total_value": {
+            "mean": 86.867,
+            "sd": 3.44,
+            "ci95": [
+              83.953,
+              89.781
+            ]
+          },
+          "gross_total_value": {
+            "mean": 86.867,
+            "sd": 3.44,
+            "ci95": [
+              83.953,
+              89.781
+            ]
+          },
+          "external_real_value": {
+            "mean": 73.95,
+            "sd": 3.674,
+            "ci95": [
+              70.725,
+              77.2
+            ]
+          },
+          "max_external_value": {
+            "mean": 114.75,
+            "sd": 0.0,
+            "ci95": [
+              114.75,
+              114.75
+            ]
+          },
+          "training_real_value": {
+            "mean": 12.917,
+            "sd": 1.687,
+            "ci95": [
+              11.527,
+              14.306
+            ]
+          },
+          "fiscal_deficit_penalty": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "public_fiscal_margin": {
+            "mean": 1.373,
+            "sd": 0.291,
+            "ci95": [
+              1.122,
+              1.624
+            ]
+          },
+          "high_impact_on_time_pct": {
+            "mean": 68.572,
+            "sd": 4.666,
+            "ci95": [
+              64.287,
+              72.86
+            ]
+          },
+          "science_on_time_pct": {
+            "mean": 55.555,
+            "sd": 12.834,
+            "ci95": [
+              44.44,
+              66.67
+            ]
+          },
+          "startup_on_time_pct": {
+            "mean": 54.168,
+            "sd": 10.758,
+            "ci95": [
+              45.835,
+              62.502
+            ]
+          },
+          "enterprise_on_time_pct": {
+            "mean": 89.285,
+            "sd": 9.223,
+            "ci95": [
+              82.14,
+              96.43
+            ]
+          },
+          "swarm_on_time_pct": {
+            "mean": 50.0,
+            "sd": 14.348,
+            "ci95": [
+              38.885,
+              61.115
+            ]
+          },
+          "builder_tested_pct": {
+            "mean": 89.847,
+            "sd": 10.747,
+            "ci95": [
+              81.108,
+              98.215
+            ]
+          },
+          "broken_prod_total": {
+            "mean": 0.25,
+            "sd": 0.5,
+            "ci95": [
+              0.0,
+              0.75
+            ]
+          },
+          "cluster_utilization_pct": {
+            "mean": 69.735,
+            "sd": 1.609,
+            "ci95": [
+              68.493,
+              71.118
+            ]
+          },
+          "avg_training_tokens": {
+            "mean": 1982.5,
+            "sd": 355.188,
+            "ci95": [
+              1690.0,
+              2275.0
+            ]
+          },
+          "total_borrowed_credits": {
+            "mean": 4106.25,
+            "sd": 2965.382,
+            "ci95": [
+              1606.25,
+              6550.0
+            ]
+          },
+          "unpaid_loan_defaults": {
+            "mean": 300.0,
+            "sd": 600.0,
+            "ci95": [
+              0.0,
+              900.0
+            ]
+          }
+        }
+      }
+    },
+    "slop_bubble": {
+      "label": "Slop Bubble",
+      "by_regime": {
+        "flat_today": {
+          "label": "1. Today (Flat + Silos)",
+          "n_episodes": 4,
+          "net_total_value": {
+            "mean": 74.893,
+            "sd": 5.15,
+            "ci95": [
+              70.356,
+              78.643
+            ]
+          },
+          "gross_total_value": {
+            "mean": 74.893,
+            "sd": 5.15,
+            "ci95": [
+              70.356,
+              78.643
+            ]
+          },
+          "external_real_value": {
+            "mean": 54.625,
+            "sd": 5.15,
+            "ci95": [
+              50.087,
+              58.375
+            ]
+          },
+          "max_external_value": {
+            "mean": 107.25,
+            "sd": 0.0,
+            "ci95": [
+              107.25,
+              107.25
+            ]
+          },
+          "training_real_value": {
+            "mean": 20.268,
+            "sd": 0.0,
+            "ci95": [
+              20.268,
+              20.268
+            ]
+          },
+          "fiscal_deficit_penalty": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "public_fiscal_margin": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "ci95": [
+              1.0,
+              1.0
+            ]
+          },
+          "high_impact_on_time_pct": {
+            "mean": 56.252,
+            "sd": 6.749,
+            "ci95": [
+              50.005,
+              60.94
+            ]
+          },
+          "science_on_time_pct": {
+            "mean": 36.11,
+            "sd": 13.984,
+            "ci95": [
+              24.997,
+              50.002
+            ]
+          },
+          "startup_on_time_pct": {
+            "mean": 45.83,
+            "sd": 14.434,
+            "ci95": [
+              33.33,
+              58.33
+            ]
+          },
+          "enterprise_on_time_pct": {
+            "mean": 84.093,
+            "sd": 8.703,
+            "ci95": [
+              77.275,
+              90.91
+            ]
+          },
+          "swarm_on_time_pct": {
+            "mean": 35.715,
+            "sd": 11.337,
+            "ci95": [
+              26.19,
+              45.24
+            ]
+          },
+          "builder_tested_pct": {
+            "mean": 92.062,
+            "sd": 2.162,
+            "ci95": [
+              90.24,
+              93.885
+            ]
+          },
+          "broken_prod_total": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "cluster_utilization_pct": {
+            "mean": 72.4,
+            "sd": 1.49,
+            "ci95": [
+              71.272,
+              73.708
+            ]
+          },
+          "avg_training_tokens": {
+            "mean": 3539.2,
+            "sd": 0.0,
+            "ci95": [
+              3539.2,
+              3539.2
+            ]
+          },
+          "total_borrowed_credits": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "unpaid_loan_defaults": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "pure_market": {
+          "label": "2. Pure Market (Auction + Sublease)",
+          "n_episodes": 4,
+          "net_total_value": {
+            "mean": 93.943,
+            "sd": 8.009,
+            "ci95": [
+              87.168,
+              100.718
+            ]
+          },
+          "gross_total_value": {
+            "mean": 93.943,
+            "sd": 8.009,
+            "ci95": [
+              87.168,
+              100.718
+            ]
+          },
+          "external_real_value": {
+            "mean": 73.675,
+            "sd": 8.009,
+            "ci95": [
+              66.9,
+              80.45
+            ]
+          },
+          "max_external_value": {
+            "mean": 107.25,
+            "sd": 0.0,
+            "ci95": [
+              107.25,
+              107.25
+            ]
+          },
+          "training_real_value": {
+            "mean": 20.268,
+            "sd": 0.0,
+            "ci95": [
+              20.268,
+              20.268
+            ]
+          },
+          "fiscal_deficit_penalty": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "public_fiscal_margin": {
+            "mean": 1.603,
+            "sd": 0.387,
+            "ci95": [
+              1.274,
+              1.933
+            ]
+          },
+          "high_impact_on_time_pct": {
+            "mean": 69.53,
+            "sd": 6.443,
+            "ci95": [
+              64.06,
+              75.0
+            ]
+          },
+          "science_on_time_pct": {
+            "mean": 47.222,
+            "sd": 10.642,
+            "ci95": [
+              38.885,
+              55.56
+            ]
+          },
+          "startup_on_time_pct": {
+            "mean": 70.835,
+            "sd": 24.058,
+            "ci95": [
+              50.0,
+              91.67
+            ]
+          },
+          "enterprise_on_time_pct": {
+            "mean": 86.365,
+            "sd": 15.744,
+            "ci95": [
+              72.73,
+              100.0
+            ]
+          },
+          "swarm_on_time_pct": {
+            "mean": 97.62,
+            "sd": 2.748,
+            "ci95": [
+              95.24,
+              100.0
+            ]
+          },
+          "builder_tested_pct": {
+            "mean": 89.37,
+            "sd": 6.523,
+            "ci95": [
+              83.0,
+              93.87
+            ]
+          },
+          "broken_prod_total": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "cluster_utilization_pct": {
+            "mean": 82.1,
+            "sd": 2.966,
+            "ci95": [
+              79.605,
+              84.595
+            ]
+          },
+          "avg_training_tokens": {
+            "mean": 3539.2,
+            "sd": 0.0,
+            "ci95": [
+              3539.2,
+              3539.2
+            ]
+          },
+          "total_borrowed_credits": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "unpaid_loan_defaults": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "rule_fed": {
+          "label": "3. Rule-Based Fed (Static Formula)",
+          "n_episodes": 4,
+          "net_total_value": {
+            "mean": 95.773,
+            "sd": 7.682,
+            "ci95": [
+              89.483,
+              102.115
+            ]
+          },
+          "gross_total_value": {
+            "mean": 95.773,
+            "sd": 7.682,
+            "ci95": [
+              89.483,
+              102.115
+            ]
+          },
+          "external_real_value": {
+            "mean": 83.213,
+            "sd": 7.761,
+            "ci95": [
+              76.987,
+              89.425
+            ]
+          },
+          "max_external_value": {
+            "mean": 107.25,
+            "sd": 0.0,
+            "ci95": [
+              107.25,
+              107.25
+            ]
+          },
+          "training_real_value": {
+            "mean": 12.56,
+            "sd": 0.326,
+            "ci95": [
+              12.236,
+              12.819
+            ]
+          },
+          "fiscal_deficit_penalty": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "public_fiscal_margin": {
+            "mean": 1.214,
+            "sd": 0.109,
+            "ci95": [
+              1.109,
+              1.307
+            ]
+          },
+          "high_impact_on_time_pct": {
+            "mean": 79.688,
+            "sd": 6.504,
+            "ci95": [
+              74.222,
+              85.155
+            ]
+          },
+          "science_on_time_pct": {
+            "mean": 55.555,
+            "sd": 20.289,
+            "ci95": [
+              38.885,
+              72.225
+            ]
+          },
+          "startup_on_time_pct": {
+            "mean": 81.248,
+            "sd": 4.165,
+            "ci95": [
+              77.082,
+              83.33
+            ]
+          },
+          "enterprise_on_time_pct": {
+            "mean": 97.727,
+            "sd": 4.545,
+            "ci95": [
+              93.183,
+              100.0
+            ]
+          },
+          "swarm_on_time_pct": {
+            "mean": 96.43,
+            "sd": 4.557,
+            "ci95": [
+              92.86,
+              100.0
+            ]
+          },
+          "builder_tested_pct": {
+            "mean": 99.075,
+            "sd": 1.85,
+            "ci95": [
+              97.225,
+              100.0
+            ]
+          },
+          "broken_prod_total": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "cluster_utilization_pct": {
+            "mean": 78.388,
+            "sd": 1.711,
+            "ci95": [
+              77.025,
+              79.75
+            ]
+          },
+          "avg_training_tokens": {
+            "mean": 1907.4,
+            "sd": 68.611,
+            "ci95": [
+              1839.25,
+              1961.95
+            ]
+          },
+          "total_borrowed_credits": {
+            "mean": 3050.0,
+            "sd": 1733.013,
+            "ci95": [
+              1650.0,
+              4450.0
+            ]
+          },
+          "unpaid_loan_defaults": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "llm_fed": {
+          "label": "4. AI Token Fed (Live Governor)",
+          "n_episodes": 4,
+          "net_total_value": {
+            "mean": 103.751,
+            "sd": 6.21,
+            "ci95": [
+              99.216,
+              109.542
+            ]
+          },
+          "gross_total_value": {
+            "mean": 103.751,
+            "sd": 6.21,
+            "ci95": [
+              99.216,
+              109.542
+            ]
+          },
+          "external_real_value": {
+            "mean": 87.925,
+            "sd": 7.958,
+            "ci95": [
+              81.638,
+              95.112
+            ]
+          },
+          "max_external_value": {
+            "mean": 107.25,
+            "sd": 0.0,
+            "ci95": [
+              107.25,
+              107.25
+            ]
+          },
+          "training_real_value": {
+            "mean": 15.826,
+            "sd": 2.984,
+            "ci95": [
+              13.285,
+              18.367
+            ]
+          },
+          "fiscal_deficit_penalty": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "public_fiscal_margin": {
+            "mean": 1.427,
+            "sd": 0.269,
+            "ci95": [
+              1.194,
+              1.66
+            ]
+          },
+          "high_impact_on_time_pct": {
+            "mean": 82.03,
+            "sd": 6.44,
+            "ci95": [
+              76.562,
+              88.278
+            ]
+          },
+          "science_on_time_pct": {
+            "mean": 83.335,
+            "sd": 14.343,
+            "ci95": [
+              72.225,
+              94.445
+            ]
+          },
+          "startup_on_time_pct": {
+            "mean": 66.665,
+            "sd": 11.785,
+            "ci95": [
+              58.33,
+              77.08
+            ]
+          },
+          "enterprise_on_time_pct": {
+            "mean": 97.727,
+            "sd": 4.545,
+            "ci95": [
+              93.183,
+              100.0
+            ]
+          },
+          "swarm_on_time_pct": {
+            "mean": 88.095,
+            "sd": 9.914,
+            "ci95": [
+              79.763,
+              96.427
+            ]
+          },
+          "builder_tested_pct": {
+            "mean": 100.0,
+            "sd": 0.0,
+            "ci95": [
+              100.0,
+              100.0
+            ]
+          },
+          "broken_prod_total": {
+            "mean": 0.25,
+            "sd": 0.5,
+            "ci95": [
+              0.0,
+              0.75
+            ]
+          },
+          "cluster_utilization_pct": {
+            "mean": 80.835,
+            "sd": 0.219,
+            "ci95": [
+              80.655,
+              81.015
+            ]
+          },
+          "avg_training_tokens": {
+            "mean": 2595.0,
+            "sd": 628.305,
+            "ci95": [
+              2060.0,
+              3130.0
+            ]
+          },
+          "total_borrowed_credits": {
+            "mean": 8837.5,
+            "sd": 6364.01,
+            "ci95": [
+              3975.0,
+              14100.0
+            ]
+          },
+          "unpaid_loan_defaults": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    "innovation_boom": {
+      "label": "Science & Startup Boom",
+      "by_regime": {
+        "flat_today": {
+          "label": "1. Today (Flat + Silos)",
+          "n_episodes": 4,
+          "net_total_value": {
+            "mean": 82.502,
+            "sd": 2.661,
+            "ci95": [
+              80.414,
+              84.864
+            ]
+          },
+          "gross_total_value": {
+            "mean": 82.502,
+            "sd": 2.661,
+            "ci95": [
+              80.414,
+              84.864
+            ]
+          },
+          "external_real_value": {
+            "mean": 62.55,
+            "sd": 2.661,
+            "ci95": [
+              60.462,
+              64.912
+            ]
+          },
+          "max_external_value": {
+            "mean": 124.95,
+            "sd": 0.0,
+            "ci95": [
+              124.95,
+              124.95
+            ]
+          },
+          "training_real_value": {
+            "mean": 19.952,
+            "sd": 0.0,
+            "ci95": [
+              19.952,
+              19.952
+            ]
+          },
+          "fiscal_deficit_penalty": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "public_fiscal_margin": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "ci95": [
+              1.0,
+              1.0
+            ]
+          },
+          "high_impact_on_time_pct": {
+            "mean": 54.602,
+            "sd": 2.518,
+            "ci95": [
+              52.63,
+              56.575
+            ]
+          },
+          "science_on_time_pct": {
+            "mean": 37.5,
+            "sd": 4.815,
+            "ci95": [
+              33.33,
+              41.67
+            ]
+          },
+          "startup_on_time_pct": {
+            "mean": 41.668,
+            "sd": 3.335,
+            "ci95": [
+              40.0,
+              45.002
+            ]
+          },
+          "enterprise_on_time_pct": {
+            "mean": 90.91,
+            "sd": 7.422,
+            "ci95": [
+              84.093,
+              97.727
+            ]
+          },
+          "swarm_on_time_pct": {
+            "mean": 44.442,
+            "sd": 9.075,
+            "ci95": [
+              36.108,
+              52.78
+            ]
+          },
+          "builder_tested_pct": {
+            "mean": 94.502,
+            "sd": 1.896,
+            "ci95": [
+              92.615,
+              95.55
+            ]
+          },
+          "broken_prod_total": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "cluster_utilization_pct": {
+            "mean": 70.88,
+            "sd": 0.994,
+            "ci95": [
+              70.02,
+              71.74
+            ]
+          },
+          "avg_training_tokens": {
+            "mean": 3483.2,
+            "sd": 0.0,
+            "ci95": [
+              3483.2,
+              3483.2
+            ]
+          },
+          "total_borrowed_credits": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "unpaid_loan_defaults": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "pure_market": {
+          "label": "2. Pure Market (Auction + Sublease)",
+          "n_episodes": 4,
+          "net_total_value": {
+            "mean": 97.227,
+            "sd": 2.281,
+            "ci95": [
+              95.552,
+              99.527
+            ]
+          },
+          "gross_total_value": {
+            "mean": 97.227,
+            "sd": 2.281,
+            "ci95": [
+              95.552,
+              99.527
+            ]
+          },
+          "external_real_value": {
+            "mean": 77.275,
+            "sd": 2.281,
+            "ci95": [
+              75.6,
+              79.575
+            ]
+          },
+          "max_external_value": {
+            "mean": 124.95,
+            "sd": 0.0,
+            "ci95": [
+              124.95,
+              124.95
+            ]
+          },
+          "training_real_value": {
+            "mean": 19.952,
+            "sd": 0.0,
+            "ci95": [
+              19.952,
+              19.952
+            ]
+          },
+          "fiscal_deficit_penalty": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "public_fiscal_margin": {
+            "mean": 1.177,
+            "sd": 0.095,
+            "ci95": [
+              1.116,
+              1.267
+            ]
+          },
+          "high_impact_on_time_pct": {
+            "mean": 68.42,
+            "sd": 2.147,
+            "ci95": [
+              66.448,
+              70.392
+            ]
+          },
+          "science_on_time_pct": {
+            "mean": 22.918,
+            "sd": 4.165,
+            "ci95": [
+              18.753,
+              25.0
+            ]
+          },
+          "startup_on_time_pct": {
+            "mean": 83.332,
+            "sd": 11.548,
+            "ci95": [
+              74.998,
+              95.0
+            ]
+          },
+          "enterprise_on_time_pct": {
+            "mean": 97.727,
+            "sd": 4.545,
+            "ci95": [
+              93.183,
+              100.0
+            ]
+          },
+          "swarm_on_time_pct": {
+            "mean": 100.0,
+            "sd": 0.0,
+            "ci95": [
+              100.0,
+              100.0
+            ]
+          },
+          "builder_tested_pct": {
+            "mean": 91.498,
+            "sd": 7.504,
+            "ci95": [
+              84.525,
+              96.515
+            ]
+          },
+          "broken_prod_total": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "cluster_utilization_pct": {
+            "mean": 76.82,
+            "sd": 5.23,
+            "ci95": [
+              72.49,
+              81.15
+            ]
+          },
+          "avg_training_tokens": {
+            "mean": 3483.2,
+            "sd": 0.0,
+            "ci95": [
+              3483.2,
+              3483.2
+            ]
+          },
+          "total_borrowed_credits": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "unpaid_loan_defaults": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "rule_fed": {
+          "label": "3. Rule-Based Fed (Static Formula)",
+          "n_episodes": 4,
+          "net_total_value": {
+            "mean": 102.168,
+            "sd": 5.867,
+            "ci95": [
+              97.093,
+              107.243
+            ]
+          },
+          "gross_total_value": {
+            "mean": 102.168,
+            "sd": 5.867,
+            "ci95": [
+              97.093,
+              107.243
+            ]
+          },
+          "external_real_value": {
+            "mean": 89.075,
+            "sd": 5.867,
+            "ci95": [
+              84.0,
+              94.15
+            ]
+          },
+          "max_external_value": {
+            "mean": 124.95,
+            "sd": 0.0,
+            "ci95": [
+              124.95,
+              124.95
+            ]
+          },
+          "training_real_value": {
+            "mean": 13.093,
+            "sd": 0.0,
+            "ci95": [
+              13.093,
+              13.093
+            ]
+          },
+          "fiscal_deficit_penalty": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "public_fiscal_margin": {
+            "mean": 1.116,
+            "sd": 0.091,
+            "ci95": [
+              1.042,
+              1.191
+            ]
+          },
+          "high_impact_on_time_pct": {
+            "mean": 76.315,
+            "sd": 3.043,
+            "ci95": [
+              73.68,
+              78.95
+            ]
+          },
+          "science_on_time_pct": {
+            "mean": 41.665,
+            "sd": 19.243,
+            "ci95": [
+              25.0,
+              58.33
+            ]
+          },
+          "startup_on_time_pct": {
+            "mean": 86.665,
+            "sd": 7.696,
+            "ci95": [
+              80.0,
+              93.33
+            ]
+          },
+          "enterprise_on_time_pct": {
+            "mean": 100.0,
+            "sd": 0.0,
+            "ci95": [
+              100.0,
+              100.0
+            ]
+          },
+          "swarm_on_time_pct": {
+            "mean": 100.0,
+            "sd": 0.0,
+            "ci95": [
+              100.0,
+              100.0
+            ]
+          },
+          "builder_tested_pct": {
+            "mean": 95.0,
+            "sd": 6.382,
+            "ci95": [
+              90.0,
+              100.0
+            ]
+          },
+          "broken_prod_total": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "cluster_utilization_pct": {
+            "mean": 68.977,
+            "sd": 0.832,
+            "ci95": [
+              68.168,
+              69.485
+            ]
+          },
+          "avg_training_tokens": {
+            "mean": 2019.6,
+            "sd": 0.0,
+            "ci95": [
+              2019.6,
+              2019.6
+            ]
+          },
+          "total_borrowed_credits": {
+            "mean": 1450.0,
+            "sd": 915.605,
+            "ci95": [
+              775.0,
+              2250.0
+            ]
+          },
+          "unpaid_loan_defaults": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "llm_fed": {
+          "label": "4. AI Token Fed (Live Governor)",
+          "n_episodes": 4,
+          "net_total_value": {
+            "mean": 108.149,
+            "sd": 5.87,
+            "ci95": [
+              103.786,
+              113.224
+            ]
+          },
+          "gross_total_value": {
+            "mean": 108.149,
+            "sd": 5.87,
+            "ci95": [
+              103.786,
+              113.224
+            ]
+          },
+          "external_real_value": {
+            "mean": 95.375,
+            "sd": 6.451,
+            "ci95": [
+              91.0,
+              101.325
+            ]
+          },
+          "max_external_value": {
+            "mean": 124.95,
+            "sd": 0.0,
+            "ci95": [
+              124.95,
+              124.95
+            ]
+          },
+          "training_real_value": {
+            "mean": 12.774,
+            "sd": 1.363,
+            "ci95": [
+              11.599,
+              13.95
+            ]
+          },
+          "fiscal_deficit_penalty": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "public_fiscal_margin": {
+            "mean": 1.038,
+            "sd": 0.085,
+            "ci95": [
+              0.972,
+              1.107
+            ]
+          },
+          "high_impact_on_time_pct": {
+            "mean": 79.608,
+            "sd": 4.979,
+            "ci95": [
+              76.32,
+              84.21
+            ]
+          },
+          "science_on_time_pct": {
+            "mean": 62.5,
+            "sd": 4.815,
+            "ci95": [
+              58.33,
+              66.67
+            ]
+          },
+          "startup_on_time_pct": {
+            "mean": 78.33,
+            "sd": 10.0,
+            "ci95": [
+              73.33,
+              88.33
+            ]
+          },
+          "enterprise_on_time_pct": {
+            "mean": 100.0,
+            "sd": 0.0,
+            "ci95": [
+              100.0,
+              100.0
+            ]
+          },
+          "swarm_on_time_pct": {
+            "mean": 100.0,
+            "sd": 0.0,
+            "ci95": [
+              100.0,
+              100.0
+            ]
+          },
+          "builder_tested_pct": {
+            "mean": 99.138,
+            "sd": 1.725,
+            "ci95": [
+              97.412,
+              100.0
+            ]
+          },
+          "broken_prod_total": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "cluster_utilization_pct": {
+            "mean": 71.665,
+            "sd": 2.784,
+            "ci95": [
+              69.435,
+              73.895
+            ]
+          },
+          "avg_training_tokens": {
+            "mean": 1952.5,
+            "sd": 286.981,
+            "ci95": [
+              1705.0,
+              2200.0
+            ]
+          },
+          "total_borrowed_credits": {
+            "mean": 3687.5,
+            "sd": 3766.602,
+            "ci95": [
+              650.0,
+              6725.0
+            ]
+          },
+          "unpaid_loan_defaults": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    }
+  },
+  "by_model": {
+    "argon": {
+      "flat_today": {
+        "n_episodes": 6,
+        "net_total_value": {
+          "mean": 78.104,
+          "sd": 4.869,
+          "ci95": [
+            74.098,
+            80.779
+          ]
+        },
+        "gross_total_value": {
+          "mean": 78.104,
+          "sd": 4.869,
+          "ci95": [
+            74.098,
+            80.779
+          ]
+        },
+        "external_real_value": {
+          "mean": 58.775,
+          "sd": 4.444,
+          "ci95": [
+            55.258,
+            61.575
+          ]
+        },
+        "max_external_value": {
+          "mean": 115.65,
+          "sd": 7.946,
+          "ci95": [
+            109.75,
+            121.55
+          ]
+        },
+        "training_real_value": {
+          "mean": 19.329,
+          "sd": 1.218,
+          "ci95": [
+            18.496,
+            20.163
+          ]
+        },
+        "fiscal_deficit_penalty": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "public_fiscal_margin": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "high_impact_on_time_pct": {
+          "mean": 54.478,
+          "sd": 6.925,
+          "ci95": [
+            48.973,
+            59.167
+          ]
+        },
+        "science_on_time_pct": {
+          "mean": 45.833,
+          "sd": 13.12,
+          "ci95": [
+            36.572,
+            55.557
+          ]
+        },
+        "startup_on_time_pct": {
+          "mean": 39.722,
+          "sd": 11.025,
+          "ci95": [
+            31.945,
+            48.053
+          ]
+        },
+        "enterprise_on_time_pct": {
+          "mean": 79.005,
+          "sd": 18.17,
+          "ci95": [
+            63.855,
+            88.528
+          ]
+        },
+        "swarm_on_time_pct": {
+          "mean": 37.83,
+          "sd": 12.108,
+          "ci95": [
+            29.098,
+            46.297
+          ]
+        },
+        "builder_tested_pct": {
+          "mean": 92.602,
+          "sd": 2.856,
+          "ci95": [
+            90.502,
+            94.583
+          ]
+        },
+        "broken_prod_total": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "cluster_utilization_pct": {
+          "mean": 71.67,
+          "sd": 1.604,
+          "ci95": [
+            70.592,
+            72.832
+          ]
+        },
+        "avg_training_tokens": {
+          "mean": 3345.067,
+          "sd": 258.588,
+          "ci95": [
+            3169.6,
+            3520.533
+          ]
+        },
+        "total_borrowed_credits": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "unpaid_loan_defaults": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "pure_market": {
+        "n_episodes": 6,
+        "net_total_value": {
+          "mean": 89.112,
+          "sd": 16.066,
+          "ci95": [
+            77.282,
+            99.763
+          ]
+        },
+        "gross_total_value": {
+          "mean": 89.112,
+          "sd": 16.066,
+          "ci95": [
+            77.282,
+            99.763
+          ]
+        },
+        "external_real_value": {
+          "mean": 69.783,
+          "sd": 14.87,
+          "ci95": [
+            58.733,
+            79.617
+          ]
+        },
+        "max_external_value": {
+          "mean": 115.65,
+          "sd": 7.946,
+          "ci95": [
+            109.75,
+            121.55
+          ]
+        },
+        "training_real_value": {
+          "mean": 19.329,
+          "sd": 1.218,
+          "ci95": [
+            18.496,
+            20.163
+          ]
+        },
+        "fiscal_deficit_penalty": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "public_fiscal_margin": {
+          "mean": 1.19,
+          "sd": 0.088,
+          "ci95": [
+            1.137,
+            1.263
+          ]
+        },
+        "high_impact_on_time_pct": {
+          "mean": 63.997,
+          "sd": 12.549,
+          "ci95": [
+            54.815,
+            72.807
+          ]
+        },
+        "science_on_time_pct": {
+          "mean": 27.317,
+          "sd": 23.336,
+          "ci95": [
+            11.112,
+            45.373
+          ]
+        },
+        "startup_on_time_pct": {
+          "mean": 76.112,
+          "sd": 22.028,
+          "ci95": [
+            60.833,
+            91.39
+          ]
+        },
+        "enterprise_on_time_pct": {
+          "mean": 81.062,
+          "sd": 11.777,
+          "ci95": [
+            73.27,
+            90.368
+          ]
+        },
+        "swarm_on_time_pct": {
+          "mean": 85.187,
+          "sd": 22.949,
+          "ci95": [
+            70.373,
+            100.0
+          ]
+        },
+        "builder_tested_pct": {
+          "mean": 89.413,
+          "sd": 7.353,
+          "ci95": [
+            84.208,
+            94.323
+          ]
+        },
+        "broken_prod_total": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "cluster_utilization_pct": {
+          "mean": 79.953,
+          "sd": 4.944,
+          "ci95": [
+            76.265,
+            83.292
+          ]
+        },
+        "avg_training_tokens": {
+          "mean": 3345.067,
+          "sd": 258.588,
+          "ci95": [
+            3169.6,
+            3520.533
+          ]
+        },
+        "total_borrowed_credits": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "unpaid_loan_defaults": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "rule_fed": {
+        "n_episodes": 6,
+        "net_total_value": {
+          "mean": 90.002,
+          "sd": 7.554,
+          "ci95": [
+            84.105,
+            95.129
+          ]
+        },
+        "gross_total_value": {
+          "mean": 90.002,
+          "sd": 7.554,
+          "ci95": [
+            84.105,
+            95.129
+          ]
+        },
+        "external_real_value": {
+          "mean": 77.35,
+          "sd": 7.084,
+          "ci95": [
+            71.833,
+            82.192
+          ]
+        },
+        "max_external_value": {
+          "mean": 115.65,
+          "sd": 7.946,
+          "ci95": [
+            109.75,
+            121.55
+          ]
+        },
+        "training_real_value": {
+          "mean": 12.652,
+          "sd": 0.484,
+          "ci95": [
+            12.272,
+            12.98
+          ]
+        },
+        "fiscal_deficit_penalty": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "public_fiscal_margin": {
+          "mean": 1.137,
+          "sd": 0.083,
+          "ci95": [
+            1.071,
+            1.194
+          ]
+        },
+        "high_impact_on_time_pct": {
+          "mean": 71.942,
+          "sd": 5.039,
+          "ci95": [
+            67.67,
+            75.16
+          ]
+        },
+        "science_on_time_pct": {
+          "mean": 34.257,
+          "sd": 8.723,
+          "ci95": [
+            27.777,
+            40.737
+          ]
+        },
+        "startup_on_time_pct": {
+          "mean": 76.943,
+          "sd": 19.841,
+          "ci95": [
+            61.113,
+            89.997
+          ]
+        },
+        "enterprise_on_time_pct": {
+          "mean": 97.295,
+          "sd": 4.236,
+          "ci95": [
+            94.265,
+            100.0
+          ]
+        },
+        "swarm_on_time_pct": {
+          "mean": 81.48,
+          "sd": 28.691,
+          "ci95": [
+            62.96,
+            100.0
+          ]
+        },
+        "builder_tested_pct": {
+          "mean": 98.193,
+          "sd": 3.003,
+          "ci95": [
+            95.813,
+            100.0
+          ]
+        },
+        "broken_prod_total": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "cluster_utilization_pct": {
+          "mean": 70.69,
+          "sd": 6.888,
+          "ci95": [
+            65.85,
+            75.788
+          ]
+        },
+        "avg_training_tokens": {
+          "mean": 1926.667,
+          "sd": 101.874,
+          "ci95": [
+            1846.667,
+            1995.833
+          ]
+        },
+        "total_borrowed_credits": {
+          "mean": 2533.333,
+          "sd": 1789.879,
+          "ci95": [
+            1333.333,
+            3841.667
+          ]
+        },
+        "unpaid_loan_defaults": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "llm_fed": {
+        "n_episodes": 6,
+        "net_total_value": {
+          "mean": 101.287,
+          "sd": 12.184,
+          "ci95": [
+            92.375,
+            110.2
+          ]
+        },
+        "gross_total_value": {
+          "mean": 101.287,
+          "sd": 12.184,
+          "ci95": [
+            92.375,
+            110.2
+          ]
+        },
+        "external_real_value": {
+          "mean": 89.15,
+          "sd": 11.756,
+          "ci95": [
+            80.633,
+            97.667
+          ]
+        },
+        "max_external_value": {
+          "mean": 115.65,
+          "sd": 7.946,
+          "ci95": [
+            109.75,
+            121.55
+          ]
+        },
+        "training_real_value": {
+          "mean": 12.137,
+          "sd": 1.009,
+          "ci95": [
+            11.527,
+            12.945
+          ]
+        },
+        "fiscal_deficit_penalty": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "public_fiscal_margin": {
+          "mean": 1.096,
+          "sd": 0.102,
+          "ci95": [
+            1.022,
+            1.17
+          ]
+        },
+        "high_impact_on_time_pct": {
+          "mean": 79.648,
+          "sd": 8.212,
+          "ci95": [
+            73.86,
+            85.707
+          ]
+        },
+        "science_on_time_pct": {
+          "mean": 67.128,
+          "sd": 23.071,
+          "ci95": [
+            50.46,
+            85.185
+          ]
+        },
+        "startup_on_time_pct": {
+          "mean": 72.22,
+          "sd": 14.05,
+          "ci95": [
+            62.497,
+            83.33
+          ]
+        },
+        "enterprise_on_time_pct": {
+          "mean": 97.295,
+          "sd": 4.236,
+          "ci95": [
+            94.265,
+            100.0
+          ]
+        },
+        "swarm_on_time_pct": {
+          "mean": 79.895,
+          "sd": 28.584,
+          "ci95": [
+            57.672,
+            98.413
+          ]
+        },
+        "builder_tested_pct": {
+          "mean": 99.405,
+          "sd": 1.457,
+          "ci95": [
+            98.215,
+            100.0
+          ]
+        },
+        "broken_prod_total": {
+          "mean": 0.167,
+          "sd": 0.408,
+          "ci95": [
+            0.0,
+            0.5
+          ]
+        },
+        "cluster_utilization_pct": {
+          "mean": 74.767,
+          "sd": 5.033,
+          "ci95": [
+            71.183,
+            78.893
+          ]
+        },
+        "avg_training_tokens": {
+          "mean": 1818.333,
+          "sd": 212.454,
+          "ci95": [
+            1690.0,
+            1988.333
+          ]
+        },
+        "total_borrowed_credits": {
+          "mean": 5687.5,
+          "sd": 6831.32,
+          "ci95": [
+            1287.5,
+            10775.0
+          ]
+        },
+        "unpaid_loan_defaults": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "flash": {
+      "flat_today": {
+        "n_episodes": 6,
+        "net_total_value": {
+          "mean": 75.512,
+          "sd": 8.017,
+          "ci95": [
+            69.748,
+            81.107
+          ]
+        },
+        "gross_total_value": {
+          "mean": 75.512,
+          "sd": 8.017,
+          "ci95": [
+            69.748,
+            81.107
+          ]
+        },
+        "external_real_value": {
+          "mean": 56.183,
+          "sd": 7.679,
+          "ci95": [
+            50.667,
+            61.558
+          ]
+        },
+        "max_external_value": {
+          "mean": 115.65,
+          "sd": 7.946,
+          "ci95": [
+            109.75,
+            121.55
+          ]
+        },
+        "training_real_value": {
+          "mean": 19.329,
+          "sd": 1.218,
+          "ci95": [
+            18.496,
+            20.163
+          ]
+        },
+        "fiscal_deficit_penalty": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "public_fiscal_margin": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "high_impact_on_time_pct": {
+          "mean": 53.235,
+          "sd": 5.686,
+          "ci95": [
+            49.088,
+            57.072
+          ]
+        },
+        "science_on_time_pct": {
+          "mean": 34.72,
+          "sd": 7.808,
+          "ci95": [
+            29.165,
+            40.275
+          ]
+        },
+        "startup_on_time_pct": {
+          "mean": 35.278,
+          "sd": 16.612,
+          "ci95": [
+            23.335,
+            47.222
+          ]
+        },
+        "enterprise_on_time_pct": {
+          "mean": 87.663,
+          "sd": 10.06,
+          "ci95": [
+            80.088,
+            94.265
+          ]
+        },
+        "swarm_on_time_pct": {
+          "mean": 35.977,
+          "sd": 11.163,
+          "ci95": [
+            28.04,
+            43.648
+          ]
+        },
+        "builder_tested_pct": {
+          "mean": 92.575,
+          "sd": 2.4,
+          "ci95": [
+            90.833,
+            94.392
+          ]
+        },
+        "broken_prod_total": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "cluster_utilization_pct": {
+          "mean": 70.47,
+          "sd": 1.719,
+          "ci95": [
+            69.193,
+            71.727
+          ]
+        },
+        "avg_training_tokens": {
+          "mean": 3345.067,
+          "sd": 258.588,
+          "ci95": [
+            3169.6,
+            3520.533
+          ]
+        },
+        "total_borrowed_credits": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "unpaid_loan_defaults": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "pure_market": {
+        "n_episodes": 6,
+        "net_total_value": {
+          "mean": 87.196,
+          "sd": 8.891,
+          "ci95": [
+            80.268,
+            93.457
+          ]
+        },
+        "gross_total_value": {
+          "mean": 87.196,
+          "sd": 8.891,
+          "ci95": [
+            80.268,
+            93.457
+          ]
+        },
+        "external_real_value": {
+          "mean": 67.867,
+          "sd": 8.01,
+          "ci95": [
+            61.775,
+            73.4
+          ]
+        },
+        "max_external_value": {
+          "mean": 115.65,
+          "sd": 7.946,
+          "ci95": [
+            109.75,
+            121.55
+          ]
+        },
+        "training_real_value": {
+          "mean": 19.329,
+          "sd": 1.218,
+          "ci95": [
+            18.496,
+            20.163
+          ]
+        },
+        "fiscal_deficit_penalty": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "public_fiscal_margin": {
+          "mean": 1.733,
+          "sd": 0.389,
+          "ci95": [
+            1.444,
+            1.989
+          ]
+        },
+        "high_impact_on_time_pct": {
+          "mean": 63.208,
+          "sd": 5.486,
+          "ci95": [
+            58.965,
+            66.967
+          ]
+        },
+        "science_on_time_pct": {
+          "mean": 30.553,
+          "sd": 8.239,
+          "ci95": [
+            24.998,
+            37.033
+          ]
+        },
+        "startup_on_time_pct": {
+          "mean": 61.388,
+          "sd": 14.773,
+          "ci95": [
+            51.388,
+            71.388
+          ]
+        },
+        "enterprise_on_time_pct": {
+          "mean": 92.857,
+          "sd": 11.066,
+          "ci95": [
+            85.713,
+            100.0
+          ]
+        },
+        "swarm_on_time_pct": {
+          "mean": 91.007,
+          "sd": 10.464,
+          "ci95": [
+            83.6,
+            98.413
+          ]
+        },
+        "builder_tested_pct": {
+          "mean": 88.355,
+          "sd": 8.281,
+          "ci95": [
+            82.342,
+            93.99
+          ]
+        },
+        "broken_prod_total": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "cluster_utilization_pct": {
+          "mean": 73.145,
+          "sd": 5.563,
+          "ci95": [
+            69.057,
+            77.405
+          ]
+        },
+        "avg_training_tokens": {
+          "mean": 3345.067,
+          "sd": 258.588,
+          "ci95": [
+            3169.6,
+            3520.533
+          ]
+        },
+        "total_borrowed_credits": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "unpaid_loan_defaults": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "rule_fed": {
+        "n_episodes": 6,
+        "net_total_value": {
+          "mean": 99.518,
+          "sd": 8.222,
+          "ci95": [
+            93.726,
+            105.309
+          ]
+        },
+        "gross_total_value": {
+          "mean": 99.518,
+          "sd": 8.222,
+          "ci95": [
+            93.726,
+            105.309
+          ]
+        },
+        "external_real_value": {
+          "mean": 87.092,
+          "sd": 7.649,
+          "ci95": [
+            81.725,
+            92.458
+          ]
+        },
+        "max_external_value": {
+          "mean": 115.65,
+          "sd": 7.946,
+          "ci95": [
+            109.75,
+            121.55
+          ]
+        },
+        "training_real_value": {
+          "mean": 12.426,
+          "sd": 0.595,
+          "ci95": [
+            12.011,
+            12.859
+          ]
+        },
+        "fiscal_deficit_penalty": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "public_fiscal_margin": {
+          "mean": 1.286,
+          "sd": 0.147,
+          "ci95": [
+            1.178,
+            1.388
+          ]
+        },
+        "high_impact_on_time_pct": {
+          "mean": 78.252,
+          "sd": 6.141,
+          "ci95": [
+            73.937,
+            82.567
+          ]
+        },
+        "science_on_time_pct": {
+          "mean": 65.742,
+          "sd": 7.175,
+          "ci95": [
+            61.11,
+            70.835
+          ]
+        },
+        "startup_on_time_pct": {
+          "mean": 71.11,
+          "sd": 13.649,
+          "ci95": [
+            60.555,
+            80.277
+          ]
+        },
+        "enterprise_on_time_pct": {
+          "mean": 96.428,
+          "sd": 5.977,
+          "ci95": [
+            91.665,
+            100.0
+          ]
+        },
+        "swarm_on_time_pct": {
+          "mean": 82.807,
+          "sd": 21.398,
+          "ci95": [
+            67.993,
+            97.62
+          ]
+        },
+        "builder_tested_pct": {
+          "mean": 92.0,
+          "sd": 6.902,
+          "ci95": [
+            87.112,
+            97.333
+          ]
+        },
+        "broken_prod_total": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "cluster_utilization_pct": {
+          "mean": 71.78,
+          "sd": 4.813,
+          "ci95": [
+            68.59,
+            75.432
+          ]
+        },
+        "avg_training_tokens": {
+          "mean": 1879.167,
+          "sd": 125.182,
+          "ci95": [
+            1791.8,
+            1970.3
+          ]
+        },
+        "total_borrowed_credits": {
+          "mean": 2191.667,
+          "sd": 1080.008,
+          "ci95": [
+            1441.667,
+            2941.667
+          ]
+        },
+        "unpaid_loan_defaults": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "llm_fed": {
+        "n_episodes": 6,
+        "net_total_value": {
+          "mean": 97.891,
+          "sd": 9.875,
+          "ci95": [
+            90.209,
+            104.759
+          ]
+        },
+        "gross_total_value": {
+          "mean": 97.891,
+          "sd": 9.875,
+          "ci95": [
+            90.209,
+            104.759
+          ]
+        },
+        "external_real_value": {
+          "mean": 82.35,
+          "sd": 9.717,
+          "ci95": [
+            75.358,
+            89.425
+          ]
+        },
+        "max_external_value": {
+          "mean": 115.65,
+          "sd": 7.946,
+          "ci95": [
+            109.75,
+            121.55
+          ]
+        },
+        "training_real_value": {
+          "mean": 15.541,
+          "sd": 2.223,
+          "ci95": [
+            14.005,
+            17.077
+          ]
+        },
+        "fiscal_deficit_penalty": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "public_fiscal_margin": {
+          "mean": 1.463,
+          "sd": 0.28,
+          "ci95": [
+            1.263,
+            1.648
+          ]
+        },
+        "high_impact_on_time_pct": {
+          "mean": 73.825,
+          "sd": 6.883,
+          "ci95": [
+            68.223,
+            78.402
+          ]
+        },
+        "science_on_time_pct": {
+          "mean": 67.132,
+          "sd": 6.192,
+          "ci95": [
+            62.5,
+            72.225
+          ]
+        },
+        "startup_on_time_pct": {
+          "mean": 60.555,
+          "sd": 12.937,
+          "ci95": [
+            51.112,
+            69.72
+          ]
+        },
+        "enterprise_on_time_pct": {
+          "mean": 94.047,
+          "sd": 9.495,
+          "ci95": [
+            86.903,
+            100.0
+          ]
+        },
+        "swarm_on_time_pct": {
+          "mean": 78.835,
+          "sd": 21.36,
+          "ci95": [
+            62.697,
+            93.65
+          ]
+        },
+        "builder_tested_pct": {
+          "mean": 93.252,
+          "sd": 9.846,
+          "ci95": [
+            85.48,
+            99.425
+          ]
+        },
+        "broken_prod_total": {
+          "mean": 0.167,
+          "sd": 0.408,
+          "ci95": [
+            0.0,
+            0.5
+          ]
+        },
+        "cluster_utilization_pct": {
+          "mean": 73.39,
+          "sd": 6.003,
+          "ci95": [
+            69.237,
+            78.15
+          ]
+        },
+        "avg_training_tokens": {
+          "mean": 2535.0,
+          "sd": 468.006,
+          "ci95": [
+            2211.667,
+            2858.333
+          ]
+        },
+        "total_borrowed_credits": {
+          "mean": 5400.0,
+          "sd": 2112.108,
+          "ci95": [
+            3941.667,
+            7033.333
+          ]
+        },
+        "unpaid_loan_defaults": {
+          "mean": 200.0,
+          "sd": 489.898,
+          "ci95": [
+            0.0,
+            600.0
+          ]
+        }
+      }
+    }
+  },
+  "paired_comparisons": {
+    "llm_fed_vs_flat_today": {
+      "n_pairs": 12,
+      "wins": 12,
+      "ties": 0,
+      "net_value_diff": {
+        "mean": 22.781,
+        "sd": 9.598,
+        "ci95": [
+          17.617,
+          27.589
+        ]
+      },
+      "high_impact_pct_diff": {
+        "mean": 22.88,
+        "sd": 8.262,
+        "ci95": [
+          18.339,
+          27.347
+        ]
+      },
+      "science_pct_diff": {
+        "mean": 26.853,
+        "sd": 22.828,
+        "ci95": [
+          13.888,
+          38.893
+        ]
+      }
+    },
+    "llm_fed_vs_pure_market": {
+      "n_pairs": 12,
+      "wins": 12,
+      "ties": 0,
+      "net_value_diff": {
+        "mean": 11.435,
+        "sd": 5.224,
+        "ci95": [
+          8.4,
+          14.096
+        ]
+      },
+      "high_impact_pct_diff": {
+        "mean": 13.134,
+        "sd": 5.552,
+        "ci95": [
+          10.245,
+          16.229
+        ]
+      },
+      "science_pct_diff": {
+        "mean": 38.195,
+        "sd": 6.281,
+        "ci95": [
+          34.955,
+          41.667
+        ]
+      }
+    },
+    "llm_fed_vs_rule_fed": {
+      "n_pairs": 12,
+      "wins": 7,
+      "ties": 0,
+      "net_value_diff": {
+        "mean": 4.83,
+        "sd": 9.491,
+        "ci95": [
+          -0.236,
+          9.978
+        ]
+      },
+      "high_impact_pct_diff": {
+        "mean": 1.64,
+        "sd": 8.397,
+        "ci95": [
+          -2.968,
+          6.202
+        ]
+      },
+      "science_pct_diff": {
+        "mean": 17.131,
+        "sd": 23.237,
+        "ci95": [
+          5.556,
+          30.328
+        ]
+      }
+    },
+    "rule_fed_vs_pure_market": {
+      "n_pairs": 12,
+      "wins": 9,
+      "ties": 0,
+      "net_value_diff": {
+        "mean": 6.606,
+        "sd": 10.92,
+        "ci95": [
+          0.536,
+          12.161
+        ]
+      },
+      "high_impact_pct_diff": {
+        "mean": 11.494,
+        "sd": 8.586,
+        "ci95": [
+          6.818,
+          15.978
+        ]
+      },
+      "science_pct_diff": {
+        "mean": 21.064,
+        "sd": 22.584,
+        "ci95": [
+          8.332,
+          32.408
+        ]
+      }
+    },
+    "pure_market_vs_flat_today": {
+      "n_pairs": 12,
+      "wins": 11,
+      "ties": 0,
+      "net_value_diff": {
+        "mean": 11.346,
+        "sd": 10.912,
+        "ci95": [
+          5.337,
+          16.508
+        ]
+      },
+      "high_impact_pct_diff": {
+        "mean": 9.746,
+        "sd": 9.092,
+        "ci95": [
+          4.613,
+          14.175
+        ]
+      },
+      "science_pct_diff": {
+        "mean": -11.342,
+        "sd": 22.175,
+        "ci95": [
+          -24.073,
+          0.233
+        ]
+      }
+    }
+  },
+  "fomc_samples": {
+    "supply_shock": [
+      {
+        "round": 1,
+        "training_tokens": 2500,
+        "clearing_spot": 1.65,
+        "science_mult": 0.65,
+        "science_cap_tokens": 2144,
+        "startup_credit_line": 850.0,
+        "statement": "We release moderate internal training capacity above the core safety threshold, extend targeted startup working-capital credit and ring-fenced science access, and apply a modest commercial spot surcharge to preserve fiscal balance while cap"
+      },
+      {
+        "round": 2,
+        "training_tokens": 1400,
+        "clearing_spot": 3.45,
+        "science_mult": 0.55,
+        "science_cap_tokens": 1500,
+        "startup_credit_line": 1350.0,
+        "statement": "Facing an acute cluster supply contraction to 7,600 tokens, the Committee is paring internal training to the 1,400-token safety floor to maximize public inference capacity, hiking the commercial spot surcharge to curb cash-rich speculative "
+      },
+      {
+        "round": 3,
+        "training_tokens": 1400,
+        "clearing_spot": 3.6,
+        "science_mult": 0.45,
+        "science_cap_tokens": 1672,
+        "startup_credit_line": 1400.0,
+        "statement": "Facing a severe cluster supply contraction to 8,000 tokens and intense commercial demand pressure, we pare internal training to the 1,400-token safety floor to release compute for high-value inference, raise the commercial spot surcharge to"
+      },
+      {
+        "round": 4,
+        "training_tokens": 1400,
+        "clearing_spot": 2.43,
+        "science_mult": 0.55,
+        "science_cap_tokens": 4218,
+        "startup_credit_line": 1400.0,
+        "statement": "With extreme high-impact demand from verified startups (9 tickets, 6 urgent) and accredited science (6 tickets, 3 urgent) far exceeding public capacity, we pare internal training down to the 1,400-token critical safety floor to maximize pub"
+      },
+      {
+        "round": 5,
+        "training_tokens": 1400,
+        "clearing_spot": 2.46,
+        "science_mult": 0.65,
+        "science_cap_tokens": 3648,
+        "startup_credit_line": 1400.0,
+        "statement": "In the final round, we release core internal training capacity down to the 1,400-token safety floor to relieve acute urgent demand across verified startups and accredited science, paired with full startup liquidity lines, ring-fenced scienc"
+      }
+    ],
+    "slop_bubble": [
+      {
+        "round": 1,
+        "training_tokens": 3600,
+        "clearing_spot": 2.14,
+        "science_mult": 0.65,
+        "science_cap_tokens": 1680,
+        "startup_credit_line": 950.0,
+        "statement": "We are fully funding core internal R&D up to the 3,600-token threshold while extending working-capital credit to liquidity-constrained startups, ring-fencing discounted science capacity, and applying a modest spot surcharge on cash-rich urg"
+      },
+      {
+        "round": 2,
+        "training_tokens": 1800,
+        "clearing_spot": 2.32,
+        "science_mult": 0.55,
+        "science_cap_tokens": 3745,
+        "startup_credit_line": 1250.0,
+        "statement": "With high-impact startup and scientific demand heavily backlogged and priced out by cash-rich commercial traffic, we are temporarily reallocating internal training capacity above the critical safety floor to the public pool, expanding liqui"
+      },
+      {
+        "round": 3,
+        "training_tokens": 1400,
+        "clearing_spot": 2.65,
+        "science_mult": 0.55,
+        "science_cap_tokens": 3996,
+        "startup_credit_line": 1400.0,
+        "statement": "With high-value startup and science demand severely crowded out by cash-rich commercial surges (3.06x demand/supply), we release internal training capacity down to the 1,400-token safety floor, levy a +0.65 spot surcharge on general commerc"
+      },
+      {
+        "round": 4,
+        "training_tokens": 1400,
+        "clearing_spot": 2.75,
+        "science_mult": 0.55,
+        "science_cap_tokens": 3800,
+        "startup_credit_line": 1400.0,
+        "statement": "To reverse the severe crowding-out of verified startups and accredited science by cash-rich general commercial demand, we are releasing non-critical internal training capacity down to the 1,400-token safety floor, maximizing the science rin"
+      },
+      {
+        "round": 5,
+        "training_tokens": 1400,
+        "clearing_spot": 1.75,
+        "science_mult": 0.35,
+        "science_cap_tokens": 3230,
+        "startup_credit_line": 1400.0,
+        "statement": "With a strong 1.19x fiscal buffer in the final round and a surge of 9 urgent startup and science breakthroughs previously throttled by high spot prices, we release internal training capacity down to the 1,400-token safety floor, deploy maxi"
+      }
+    ],
+    "innovation_boom": [
+      {
+        "round": 1,
+        "training_tokens": 2800,
+        "clearing_spot": 1.61,
+        "science_mult": 0.7,
+        "science_cap_tokens": 2304,
+        "startup_credit_line": 900.0,
+        "statement": "With public demand at 1.60x baseline supply and startup liquidity constrained, we modestly release marginal internal training capacity, extend a targeted 900-credit startup facility, ring-fence accredited science, and apply a +0.15 spot sur"
+      },
+      {
+        "round": 2,
+        "training_tokens": 1650,
+        "clearing_spot": 2.16,
+        "science_mult": 0.5,
+        "science_cap_tokens": 3258,
+        "startup_credit_line": 1200.0,
+        "statement": "With high-impact verified startup and accredited science demand surging against a reduced 11,800-token cluster, we are releasing non-critical internal training capacity into the public pool, expanding the ring-fenced science allocation at a"
+      },
+      {
+        "round": 3,
+        "training_tokens": 1400,
+        "clearing_spot": 2.36,
+        "science_mult": 0.65,
+        "science_cap_tokens": 3534,
+        "startup_credit_line": 1000.0,
+        "statement": "To relieve severe capacity starvation for high-value startups and science labs while curbing cash-rich commercial crowding-out and preserving our 1.08x fiscal buffer, we are releasing internal training capacity above the 1,400-token safety "
+      },
+      {
+        "round": 4,
+        "training_tokens": 1400,
+        "clearing_spot": 1.99,
+        "science_mult": 0.45,
+        "science_cap_tokens": 2964,
+        "startup_credit_line": 1400.0,
+        "statement": "With zero speculative commercial demand and a massive backlog of urgent verified startup and accredited science breakthroughs, we release internal capability-training capacity above the 1,400-token safety floor to the public pool, eliminate"
+      },
+      {
+        "round": 5,
+        "training_tokens": 1400,
+        "clearing_spot": 1.24,
+        "science_mult": 0.55,
+        "science_cap_tokens": 3382,
+        "startup_credit_line": 1000.0,
+        "statement": "With zero speculative general-commercial demand and urgent final-round bottlenecks in high-value startup and science queues, we release internal training capacity down to the 1,400-token safety floor, cut the spot surcharge to -0.25, and ma"
+      }
+    ]
+  }
+}

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TokenFed — Compute Monetary Monitor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --background: #FAF9F5;
+      --card: #FFFFFF;
+      --secondary: #F1EFE8;
+      --foreground: #0F172A;
+      --muted-foreground: #64748B;
+      --border: #E2E0D8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0B0F17;
+        --card: #111827;
+        --secondary: #1E293B;
+        --foreground: #F8FAFC;
+        --muted-foreground: #94A3B8;
+        --border: #273449;
+      }
+    }
+    .font-editorial {
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      font-kerning: normal;
+      font-variant-ligatures: common-ligatures;
+    }
+    .kicker-caps {
+      font-size: 12px;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--muted-foreground);
+    }
+    .tnum {
+      font-variant-numeric: tabular-nums;
+    }
+    .surface-elevated {
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 6px 20px -8px rgba(0, 0, 0, 0.06);
+    }
+    .surface-subtle {
+      background: color-mix(in srgb, var(--secondary) 60%, var(--card));
+      border: 1px solid var(--border);
+    }
+    .fed-highlight-card {
+      background: linear-gradient(
+        180deg,
+        color-mix(in srgb, #0284C7 8%, var(--card)) 0%,
+        var(--card) 68%
+      );
+      border: 1px solid color-mix(in srgb, #0284C7 45%, var(--border));
+      box-shadow: 0 2px 14px -4px rgba(2, 132, 199, 0.14);
+    }
+    .floating-tip {
+      pointer-events: none;
+      background: color-mix(in srgb, var(--card) 94%, transparent);
+      -webkit-backdrop-filter: saturate(1.4) blur(10px);
+      backdrop-filter: saturate(1.4) blur(10px);
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.18);
+      transition: opacity 120ms ease, transform 120ms ease;
+    }
+    .seg-btn {
+      transition: all 160ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased px-4 py-6 sm:px-8 sm:py-8">
+  <div class="max-w-5xl mx-auto space-y-6">
+
+    <!-- EDITORIAL MASTHEAD -->
+    <header class="border-b border-[var(--border)] pb-5 space-y-4">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div class="space-y-1.5">
+          <div class="kicker-caps">
+            Compute Reserve Bulletin &middot; 12 AI Firms &middot; 48 Matched Runs
+          </div>
+          <h1 class="font-editorial text-3xl sm:text-4xl font-semibold tracking-tight leading-none">
+            TokenFed
+          </h1>
+          <p class="text-sm sm:text-base text-[var(--muted-foreground)] max-w-2xl leading-relaxed">
+            Flat API prices waste idle corporate GPUs; pure surge auctions let cash-rich spam outbid science. Running the cluster like a <strong class="text-[var(--foreground)] font-semibold">central bank</strong> beats both across every shock.
+          </p>
+        </div>
+
+        <!-- Tactile Scenario Selector -->
+        <div class="space-y-1.5 shrink-0">
+          <div class="text-xs font-medium text-[var(--muted-foreground)] md:text-right">Macroeconomic Shock Regime</div>
+          <div class="inline-flex flex-wrap items-center gap-1 p-1 rounded-xl surface-subtle">
+            <button onclick="setScope('overall')" id="scope-overall" class="seg-btn px-3 py-1.5 rounded-lg text-xs font-semibold">I &middot; All Shocks</button>
+            <button onclick="setScope('supply_shock')" id="scope-supply_shock" class="seg-btn px-3 py-1.5 rounded-lg text-xs font-semibold">II &middot; GPU Crunch</button>
+            <button onclick="setScope('slop_bubble')" id="scope-slop_bubble" class="seg-btn px-3 py-1.5 rounded-lg text-xs font-semibold">III &middot; Spam Bubble</button>
+            <button onclick="setScope('innovation_boom')" id="scope-innovation_boom" class="seg-btn px-3 py-1.5 rounded-lg text-xs font-semibold">IV &middot; Science Boom</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- THREE-SYSTEM EXECUTIVE STRIP (Instant Side-by-Side Comparison) -->
+    <section id="hero-cards" class="grid grid-cols-1 md:grid-cols-3 gap-3.5"></section>
+
+    <!-- SERIES I: HERO SYNCHRONIZED TIME-SERIES -->
+    <section class="surface-elevated rounded-2xl p-5 sm:p-6 space-y-3 relative">
+      <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+        <div class="space-y-0.5">
+          <div class="kicker-caps">Series I &middot; Real Economic + R&amp;D Output</div>
+          <h2 class="font-editorial text-xl font-semibold tracking-tight">
+            Cumulative Value Delivered Across Five Rounds
+          </h2>
+          <p id="narrative-line" class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed max-w-2xl"></p>
+        </div>
+        <div class="flex flex-wrap items-center gap-4 text-xs pt-1 shrink-0">
+          <span class="inline-flex items-center gap-1.5 font-bold" style="color:#0284C7">
+            <span class="w-4 rounded-full inline-block" style="background:#0284C7; height:3px"></span>TokenFed &#9733;
+          </span>
+          <span class="inline-flex items-center gap-1.5 font-semibold" style="color:#D97706">
+            <span class="w-4 rounded-full inline-block" style="background:#D97706; height:2.5px"></span>Pure Market
+          </span>
+          <span class="inline-flex items-center gap-1.5 text-[var(--muted-foreground)] font-medium">
+            <span class="w-4 inline-block border-t-2 border-dashed" style="border-color:#64748B"></span>Today (Flat)
+          </span>
+        </div>
+      </div>
+
+      <div class="relative pt-1" id="wrap-cum">
+        <div id="chart-cum" class="w-full"></div>
+        <div id="tip-cum" class="floating-tip hidden absolute top-3 left-14 z-20 rounded-xl px-3.5 py-2.5 text-xs space-y-1.5 min-w-[230px]"></div>
+      </div>
+    </section>
+
+    <!-- SERIES II & III: LIQUIDITY MECHANISM (LEFT) + SECTOR OUTCOMES & CLUSTER SPLIT (RIGHT) -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+
+      <!-- Left (6 cols): Live Liquidity Injected -->
+      <div class="lg:col-span-6 surface-elevated rounded-2xl p-5 sm:p-6 space-y-3 flex flex-col justify-between">
+        <div class="space-y-1">
+          <div class="kicker-caps">Series II &middot; Open-Market Supply</div>
+          <h3 class="font-editorial text-lg font-semibold tracking-tight">
+            Customer + Science GPU Pool (k tokens)
+          </h3>
+          <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+            During crunches, <strong class="text-[var(--foreground)]">TokenFed</strong> temporarily shifts non-urgent lab training GPUs and idle corporate blocks into live customer supply.
+          </p>
+        </div>
+
+        <div class="relative" id="wrap-sup">
+          <div id="chart-supply" class="w-full"></div>
+        </div>
+
+        <!-- Cluster Balance-Sheet Bar -->
+        <div class="pt-3 border-t border-[var(--border)] space-y-2">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-semibold text-[var(--foreground)]">Where TokenFed Allocated the GPU Cluster</span>
+            <span id="cluster-caption" class="text-[var(--muted-foreground)] tnum"></span>
+          </div>
+          <div id="cluster-bar" class="w-full h-7 rounded-lg overflow-hidden flex border border-[var(--border)] text-xs font-semibold tnum"></div>
+        </div>
+      </div>
+
+      <!-- Right (6 cols): Who Clears on Time (% of Jobs Finished) -->
+      <div class="lg:col-span-6 surface-elevated rounded-2xl p-5 sm:p-6 space-y-4 flex flex-col justify-between">
+        <div class="space-y-1">
+          <div class="kicker-caps">Series III &middot; Allocation Quality</div>
+          <h3 class="font-editorial text-lg font-semibold tracking-tight">
+            On-Time Job Completion by Buyer Group
+          </h3>
+          <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+            In a <strong class="text-[var(--foreground)]">Pure Market</strong>, deep-pocketed swarms crowd out grant-capped science. <strong class="text-[var(--foreground)]">TokenFed</strong> taxes surge, lends to builders, and protects science.
+          </p>
+        </div>
+
+        <div id="sector-panel" class="space-y-4 py-1"></div>
+
+        <div class="pt-3 border-t border-[var(--border)] flex items-center justify-between text-xs text-[var(--muted-foreground)]">
+          <span>Verified Startup Credit Repayment</span>
+          <span class="font-semibold text-[var(--foreground)] tnum">11 / 12 runs repaid in full (5% rate)</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CLEAN EDITORIAL SCORECARD TABLE -->
+    <section class="surface-elevated rounded-2xl p-5 sm:p-6 space-y-3">
+      <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+        <div>
+          <span class="kicker-caps block">Benchmark Ledger</span>
+          <h3 id="table-title" class="font-editorial text-lg font-semibold tracking-tight">Summary Scorecard &mdash; All Shocks Combined</h3>
+        </div>
+        <span id="win-pill" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold tnum" style="background:color-mix(in srgb, #0284C7 14%, var(--card)); color:#0284C7"></span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm tnum">
+          <thead>
+            <tr class="border-b-2 border-[var(--border)] text-xs text-[var(--muted-foreground)]">
+              <th class="py-2.5 pr-3 font-semibold">Governance System</th>
+              <th class="py-2.5 px-2 text-right font-semibold">Overall Score</th>
+              <th class="py-2.5 px-2 text-right font-semibold">Urgent Done</th>
+              <th class="py-2.5 px-2 text-right font-semibold">Science Done</th>
+              <th class="py-2.5 px-2 text-right font-semibold">Startups Done</th>
+              <th class="py-2.5 px-2 text-right font-semibold">Rich Swarms</th>
+              <th class="py-2.5 pl-2 text-right font-semibold">Idle GPU Waste</th>
+            </tr>
+          </thead>
+          <tbody id="score-tbody" class="divide-y divide-[var(--border)]"></tbody>
+        </table>
+      </div>
+
+      <p class="text-xs text-[var(--muted-foreground)] leading-relaxed pt-1">
+        <em>Methodological note:</em> Hatched bands mark peak shock rounds. Percentages measure each buyer group's coding jobs finished on time (not share of cluster). A separate hardcoded-formula baseline (<span class="tnum font-medium">94.8</span> overall) worked in pre-anticipated crunches but got fooled into raiding lab R&amp;D during Spam Bubbles (<span class="tnum font-medium">95.8</span> vs. <span class="tnum font-medium">103.8</span> for live TokenFed).
+      </p>
+    </section>
+
+  </div>
+
+  <script>
+    const SERIES_META = [
+      {
+        key: "flat_today",
+        num: "01",
+        label: "Today",
+        title: "Today (Flat + Locked)",
+        sub: "Fixed 1.0x price & locked corporate blocks",
+        blurb: "Rate-limit lockouts hit builders while pre-bought corporate GPUs sit idle.",
+        color: "#64748B",
+        width: 2.0,
+        dash: "5,4"
+      },
+      {
+        key: "pure_market",
+        num: "02",
+        label: "Pure Market",
+        title: "Pure Market",
+        sub: "Surge auction + corporate block resale",
+        blurb: "Unlocks idle blocks for startups, but cash-rich swarms outbid science.",
+        color: "#D97706",
+        width: 2.5,
+        dash: ""
+      },
+      {
+        key: "llm_fed",
+        num: "03",
+        label: "TokenFed ★",
+        title: "TokenFed ★",
+        sub: "Training flex + surge tax + credit + science lane",
+        blurb: "Mobilizes non-urgent training GPUs, lends to builders, and protects science.",
+        color: "#0284C7",
+        width: 3.4,
+        dash: ""
+      }
+    ];
+
+    const DATA = {
+      overall: {
+        title: "All Shocks Combined",
+        winBadge: "TokenFed won 12 / 12 paired runs (+11.4 vs. Pure Market)",
+        shockBand: [1, 3],
+        bandTag: "SHOCK WINDOW (R2–R4)",
+        narrative: "Pure Market unlocks idle corporate GPUs (76.8 → 88.2), yet grant-capped science drops from 40% to 29%. TokenFed reaches 99.6 by flexing lab training GPUs, extending builder credit, and lifting science to 67%.",
+        fedNotes: [
+          "Normal baseline: keeps core R&D training running; opens 5% builder credit window.",
+          "Shock onset: shifts non-urgent training GPUs into live supply; taxes commercial surge.",
+          "Peak congestion: caps test/verification pricing <=1.0x; protects 22% science lane.",
+          "Recovery: startup loans self-liquidate out of verified task revenue; eases surcharge.",
+          "Final sprint: releases slack capacity to clear remaining high-value builder & science jobs."
+        ],
+        sh: [18, 62, 18, 2],
+        cum: {
+          flat_today:  [20.6, 33.8, 44.0, 57.3, 76.8],
+          pure_market: [12.3, 31.4, 48.2, 64.1, 88.2],
+          llm_fed:     [18.5, 37.8, 55.1, 72.9, 99.6]
+        },
+        pub: {
+          flat_today:  [5.70, 4.36, 4.45, 5.70, 6.30],
+          pure_market: [5.70, 5.97, 5.98, 6.80, 6.58],
+          llm_fed:     [5.95, 7.01, 7.19, 8.55, 8.22]
+        },
+        rows: {
+          flat_today:  { score: 76.8, hi: 54, sci: 40, strt: 38, swm: 37, idle: 11 },
+          pure_market: { score: 88.2, hi: 64, sci: 29, strt: 69, swm: 88, idle: 2 },
+          llm_fed:     { score: 99.6, hi: 77, sci: 67, strt: 66, swm: 79, idle: 2 }
+        }
+      },
+      supply_shock: {
+        title: "GPU Crunch (-37% Cluster Outage in Rounds 2–3)",
+        winBadge: "GPU Crunch: Won 4 / 4 runs (+13.6 vs. Pure Market)",
+        shockBand: [1, 2],
+        bandTag: "-37% GPU OUTAGE (R2–R3)",
+        narrative: "When physical GPUs drop 37%, Pure Market stalls completely (73.3 vs. 73.0 Today) and science collapses to 17%. TokenFed pares internal training down to its safety floor, lifting science to 56% and output to 86.9.",
+        fedNotes: [
+          "Pre-outage: balanced cluster split across internal training and live customer pool.",
+          "Outage hits (-37% GPUs): dials training down to safety floor; opens startup credit lines.",
+          "Peak shortage: surge surcharge curbs low-value swarms while keeping verification cheap.",
+          "Hardware restored: rebuilds R&D training and clears deferred Batch backlog.",
+          "Close: startups repay working-capital draws from shipped P0/P1 revenue."
+        ],
+        sh: [18, 57, 21, 4],
+        cum: {
+          flat_today:  [21.0, 30.6, 38.1, 50.7, 73.0],
+          pure_market: [12.1, 31.5, 40.4, 53.2, 73.3],
+          llm_fed:     [18.9, 35.6, 48.1, 59.8, 86.9]
+        },
+        pub: {
+          flat_today:  [5.70, 2.17, 2.46, 5.70, 6.20],
+          pure_market: [5.70, 3.11, 2.74, 6.80, 6.75],
+          llm_fed:     [6.03, 3.81, 3.53, 8.85, 8.48]
+        },
+        rows: {
+          flat_today:  { score: 73.0, hi: 51, sci: 47, strt: 25, swm: 31, idle: 10 },
+          pure_market: { score: 73.3, hi: 53, sci: 17, strt: 52, swm: 67, idle: 4 },
+          llm_fed:     { score: 86.9, hi: 69, sci: 56, strt: 54, swm: 50, idle: 4 }
+        }
+      },
+      slop_bubble: {
+        title: "Spam Bubble (Cash-Rich Swarm Flood in Rounds 2–4)",
+        winBadge: "Spam Bubble: Won 4 / 4 runs (+9.9 vs. Pure Market)",
+        shockBand: [1, 3],
+        bandTag: "SPAM SWARM FLOOD (R2–R4)",
+        narrative: "Recognizing congestion comes from low-value commercial bots rather than broken hardware, TokenFed refuses to raid internal R&D—taxing commercial surge instead and lifting science completion to 83%.",
+        fedNotes: [
+          "Baseline round: preserves full R&D training allocation (3.5k tokens).",
+          "Swarm wave begins: levies commercial spot surcharge instead of cutting R&D training.",
+          "Peak bubble (3x demand): recycles surge receipts to fund 83% science completion.",
+          "Bubble crests: keeps verification rate-capped so builders don't ship broken code.",
+          "Normalization: trims commercial surcharge as speculative traffic subsides."
+        ],
+        sh: [21, 62, 16, 1],
+        cum: {
+          flat_today:  [20.3, 34.8, 47.6, 60.4, 74.9],
+          pure_market: [12.6, 28.7, 52.0, 69.8, 93.9],
+          llm_fed:     [17.3, 37.7, 58.1, 78.5, 103.8]
+        },
+        pub: {
+          flat_today:  [5.70, 5.70, 5.70, 5.70, 6.20],
+          pure_market: [5.70, 7.58, 7.85, 6.80, 6.48],
+          llm_fed:     [5.73, 8.89, 9.06, 8.18, 7.28]
+        },
+        rows: {
+          flat_today:  { score: 74.9, hi: 56, sci: 36, strt: 46, swm: 36, idle: 10 },
+          pure_market: { score: 93.9, hi: 70, sci: 47, strt: 71, swm: 98, idle: 2 },
+          llm_fed:     { score: 103.8, hi: 82, sci: 83, strt: 67, swm: 88, idle: 1 }
+        }
+      },
+      innovation_boom: {
+        title: "Science & Startup Boom (Breakthrough Wave in Rounds 2–4)",
+        winBadge: "Science Boom: Won 4 / 4 runs (+11.0 vs. Pure Market)",
+        shockBand: [1, 3],
+        bandTag: "BREAKTHROUGH SURGE (R2–R4)",
+        narrative: "During a wave of genuine oncology and startup breakthroughs, Pure Market starves grant-capped science (23%) while serving 100% of swarms. TokenFed releases training GPUs, cuts surcharges, and nearly triples science to 63%.",
+        fedNotes: [
+          "Opening round: opens startup credit window early to seed compounding builder revenue.",
+          "Breakthrough wave: releases internal training GPUs into customer + science pool.",
+          "Peak discovery demand: expands dedicated science reserve lane at 0.5x rate.",
+          "Sustained boom: cuts commercial surcharge (-0.25) as speculative churn stays low.",
+          "Final round: 0% idle cluster waste; 100% enterprise & 63% science completion."
+        ],
+        sh: [16, 66, 18, 0],
+        cum: {
+          flat_today:  [20.5, 35.8, 46.2, 61.0, 82.5],
+          pure_market: [12.1, 34.0, 52.2, 69.3, 97.2],
+          llm_fed:     [19.3, 40.1, 59.0, 80.3, 108.2]
+        },
+        pub: {
+          flat_today:  [5.70, 5.20, 5.20, 5.70, 6.49],
+          pure_market: [5.70, 7.23, 7.35, 6.80, 6.49],
+          llm_fed:     [6.10, 8.34, 8.99, 8.63, 8.90]
+        },
+        rows: {
+          flat_today:  { score: 82.5, hi: 55, sci: 38, strt: 42, swm: 44, idle: 11 },
+          pure_market: { score: 97.2, hi: 68, sci: 23, strt: 83, swm: 100, idle: 1 },
+          llm_fed:     { score: 108.2, hi: 80, sci: 63, strt: 78, swm: 100, idle: 0 }
+        }
+      }
+    };
+
+    let scope = "overall";
+
+    // Monotone cubic Hermite spline (Fritsch-Carlson) — smooth curves with zero overshoot
+    function monotonePath(pts) {
+      const n = pts.length;
+      if (n < 2) return "";
+      const dx = [], dy = [], m = [];
+      for (let i = 0; i < n - 1; i++) {
+        dx.push(pts[i + 1][0] - pts[i][0]);
+        dy.push(pts[i + 1][1] - pts[i][1]);
+        m.push(dy[i] / dx[i]);
+      }
+      const tangents = [m[0]];
+      for (let i = 1; i < n - 1; i++) {
+        if (m[i - 1] * m[i] <= 0) {
+          tangents.push(0);
+        } else {
+          const c1 = dx[i - 1] + dx[i];
+          tangents.push((3 * c1) / ((c1 + dx[i]) / m[i - 1] + (c1 + dx[i - 1]) / m[i]));
+        }
+      }
+      tangents.push(m[n - 2]);
+
+      let d = `M ${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
+      for (let i = 0; i < n - 1; i++) {
+        const h = dx[i] / 3;
+        const cp1x = pts[i][0] + h;
+        const cp1y = pts[i][1] + tangents[i] * h;
+        const cp2x = pts[i + 1][0] - h;
+        const cp2y = pts[i + 1][1] - tangents[i + 1] * h;
+        d += ` C ${cp1x.toFixed(1)} ${cp1y.toFixed(1)}, ${cp2x.toFixed(1)} ${cp2y.toFixed(1)}, ${pts[i + 1][0].toFixed(1)} ${pts[i + 1][1].toFixed(1)}`;
+      }
+      return d;
+    }
+
+    function spreadLabels(items, minGap) {
+      const sorted = [...items].sort((a, b) => a.y - b.y);
+      for (let pass = 0; pass < 8; pass++) {
+        for (let i = 1; i < sorted.length; i++) {
+          if (sorted[i].y - sorted[i - 1].y < minGap) {
+            const mid = (sorted[i].y + sorted[i - 1].y) / 2;
+            sorted[i - 1].y = mid - minGap / 2;
+            sorted[i].y = mid + minGap / 2;
+          }
+        }
+      }
+      const out = {};
+      sorted.forEach(it => { out[it.key] = it.y; });
+      return out;
+    }
+
+    function setScope(s) {
+      scope = s;
+      document.querySelectorAll(".seg-btn").forEach(b => {
+        const on = b.id === `scope-${scope}`;
+        b.className = `seg-btn px-3 py-1.5 rounded-lg text-xs font-semibold ${
+          on
+            ? "bg-[var(--card)] text-[var(--foreground)] shadow-sm border border-[var(--border)]"
+            : "text-[var(--muted-foreground)] hover:text-[var(--foreground)] border border-transparent"
+        }`;
+      });
+      render();
+    }
+
+    function renderHeroCards(node) {
+      const mktScore = node.rows.pure_market.score;
+      document.getElementById("hero-cards").innerHTML = SERIES_META.map(m => {
+        const r = node.rows[m.key];
+        const isFed = m.key === "llm_fed";
+        const isMkt = m.key === "pure_market";
+        const delta = (r.score - mktScore).toFixed(1);
+        return `
+          <div class="${isFed ? "fed-highlight-card" : "surface-elevated"} rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-3 relative overflow-hidden">
+            <div class="space-y-1">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-semibold tracking-wide uppercase" style="color:${m.color}">
+                  ${m.num} &middot; ${m.title}
+                </span>
+                ${isFed ? `<span class="px-2 py-0.5 rounded-full text-xs font-bold tnum" style="background:color-mix(in srgb, #0284C7 15%, var(--card)); color:#0284C7">+${delta} vs Market</span>` : ""}
+              </div>
+              <div class="flex items-baseline gap-2.5 pt-0.5">
+                <span class="font-editorial text-3xl sm:text-4xl font-semibold tracking-tight tnum">${r.score.toFixed(1)}</span>
+                <span class="text-xs text-[var(--muted-foreground)]">overall score</span>
+              </div>
+              <p class="text-xs text-[var(--muted-foreground)] leading-relaxed pt-0.5">${m.blurb}</p>
+            </div>
+
+            <div class="pt-2.5 border-t border-[var(--border)] grid grid-cols-3 gap-2 text-xs tnum">
+              <div>
+                <div class="text-[var(--muted-foreground)]">Science</div>
+                <div class="font-bold text-sm" style="${isMkt ? "color:#D97706" : isFed ? "color:#0284C7" : ""}">${r.sci}%</div>
+              </div>
+              <div>
+                <div class="text-[var(--muted-foreground)]">Startups</div>
+                <div class="font-semibold text-sm">${r.strt}%</div>
+              </div>
+              <div>
+                <div class="text-[var(--muted-foreground)]">${m.key === "flat_today" ? "GPU Waste" : "Swarms"}</div>
+                <div class="font-semibold text-sm">${m.key === "flat_today" ? `${r.idle}%` : `${r.swm}%`}</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function buildSplineChart({ containerId, uid, seriesMap, yMax, yTicks, unitSuffix, shockBand, bandTag, showDirectLabels, W, H }) {
+      const padL = 42;
+      const padR = showDirectLabels ? 148 : 20;
+      const padT = 26;
+      const padB = 32;
+      const plotW = W - padL - padR;
+      const plotH = H - padT - padB;
+
+      const xAt = i => padL + (i / 4) * plotW;
+      const yAt = v => padT + plotH - (v / yMax) * plotH;
+
+      const [s0, s1] = shockBand;
+      const bandX = xAt(s0) - plotW * 0.07;
+      const bandW = (xAt(s1) - xAt(s0)) + plotW * 0.14;
+
+      let gridSvg = "";
+      yTicks.forEach(tv => {
+        const yy = yAt(tv);
+        gridSvg += `
+          <line x1="${padL}" y1="${yy.toFixed(1)}" x2="${(padL + plotW).toFixed(1)}" y2="${yy.toFixed(1)}"
+            stroke="var(--border)" stroke-width="1" ${tv === 0 ? "" : 'stroke-dasharray="2,4"'} />
+          <text x="${padL - 10}" y="${(yy + 4).toFixed(1)}" text-anchor="end" font-size="12" class="tnum" fill="var(--muted-foreground)">${tv}${unitSuffix}</text>
+        `;
+      });
+
+      let xLabelsSvg = "";
+      for (let i = 0; i < 5; i++) {
+        const xx = xAt(i);
+        const inShock = i >= s0 && i <= s1;
+        xLabelsSvg += `
+          <text x="${xx.toFixed(1)}" y="${H - 8}" text-anchor="middle" font-size="12"
+            font-weight="${inShock ? "700" : "500"}"
+            fill="${inShock ? "var(--foreground)" : "var(--muted-foreground)"}">Round ${i + 1}</text>
+        `;
+      }
+
+      const endTargets = SERIES_META.map(m => ({ key: m.key, y: yAt(seriesMap[m.key][4]) }));
+      const labelY = showDirectLabels ? spreadLabels(endTargets, 20) : {};
+
+      // Area fill beneath TokenFed curve
+      const fedPts = seriesMap.llm_fed.map((v, i) => [xAt(i), yAt(v)]);
+      const fedCurveD = monotonePath(fedPts);
+      const areaD = `${fedCurveD} L ${fedPts[4][0].toFixed(1)} ${(padT + plotH).toFixed(1)} L ${fedPts[0][0].toFixed(1)} ${(padT + plotH).toFixed(1)} Z`;
+
+      let pathsSvg = `<path d="${areaD}" fill="url(#fedGrad-${uid})" />`;
+
+      SERIES_META.forEach(m => {
+        const vals = seriesMap[m.key];
+        const pts = vals.map((v, i) => [xAt(i), yAt(v)]);
+        const pathD = monotonePath(pts);
+        pathsSvg += `
+          <path d="${pathD}" fill="none" stroke="${m.color}" stroke-width="${m.width}"
+            ${m.dash ? `stroke-dasharray="${m.dash}"` : ""} stroke-linecap="round" />
+        `;
+        pts.forEach(([px, py], i) => {
+          const r = m.key === "llm_fed" ? 4.6 : 3.5;
+          pathsSvg += `
+            <circle id="${uid}-dot-${m.key}-${i}" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="${r}"
+              fill="${m.color}" stroke="var(--card)" stroke-width="2" />
+          `;
+        });
+        if (showDirectLabels) {
+          const endVal = vals[4];
+          const ly = labelY[m.key];
+          pathsSvg += `
+            <text x="${(xAt(4) + 10).toFixed(1)}" y="${(ly + 4).toFixed(1)}" font-size="12" class="tnum"
+              font-weight="${m.key === "llm_fed" ? "700" : "600"}" fill="${m.color}">
+              ${m.label} (${endVal.toFixed(1)})
+            </text>
+          `;
+        }
+      });
+
+      let hoverZones = "";
+      for (let i = 0; i < 5; i++) {
+        const colW = plotW / 4;
+        const hx = Math.max(padL, xAt(i) - colW / 2);
+        const hw = (i === 0 || i === 4) ? colW / 2 : colW;
+        hoverZones += `
+          <rect x="${hx.toFixed(1)}" y="${padT}" width="${hw.toFixed(1)}" height="${plotH}" fill="transparent"
+            onmouseenter="syncHover(${i})" onmouseleave="clearHover()" style="cursor:crosshair" />
+        `;
+      }
+
+      document.getElementById(containerId).innerHTML = `
+        <svg viewBox="0 0 ${W} ${H}" class="w-full h-auto overflow-visible select-none">
+          <defs>
+            <linearGradient id="fedGrad-${uid}" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0284C7" stop-opacity="0.18" />
+              <stop offset="100%" stop-color="#0284C7" stop-opacity="0.0" />
+            </linearGradient>
+            <pattern id="hatch-${uid}" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="0" x2="0" y2="8" stroke="var(--border)" stroke-width="1.5" opacity="0.65" />
+            </pattern>
+          </defs>
+
+          <!-- NBER-style Hatched Shock Band -->
+          <rect x="${bandX.toFixed(1)}" y="${padT}" width="${bandW.toFixed(1)}" height="${plotH}"
+            fill="var(--secondary)" opacity="0.6" rx="6" />
+          <rect x="${bandX.toFixed(1)}" y="${padT}" width="${bandW.toFixed(1)}" height="${plotH}"
+            fill="url(#hatch-${uid})" rx="6" />
+          <text x="${(bandX + bandW / 2).toFixed(1)}" y="${padT - 8}" text-anchor="middle"
+            font-size="12" font-weight="600" fill="var(--muted-foreground)" letter-spacing="0.05em">${bandTag}</text>
+
+          ${gridSvg}
+
+          <!-- Synchronized Crosshair Line -->
+          <line id="${uid}-vline" x1="0" y1="${padT}" x2="0" y2="${padT + plotH}"
+            stroke="var(--foreground)" stroke-width="1.2" stroke-dasharray="3,3" opacity="0" />
+
+          ${pathsSvg}
+          ${xLabelsSvg}
+          ${hoverZones}
+        </svg>
+      `;
+
+      window[`__chart_${uid}`] = { xAt, W };
+    }
+
+    function syncHover(rIdx) {
+      const node = DATA[scope];
+      ["cum", "sup"].forEach(uid => {
+        const meta = window[`__chart_${uid}`];
+        const vline = document.getElementById(`${uid}-vline`);
+        if (meta && vline) {
+          const xx = meta.xAt(rIdx);
+          vline.setAttribute("x1", xx);
+          vline.setAttribute("x2", xx);
+          vline.setAttribute("opacity", "0.45");
+        }
+        SERIES_META.forEach(m => {
+          for (let i = 0; i < 5; i++) {
+            const dot = document.getElementById(`${uid}-dot-${m.key}-${i}`);
+            if (dot) {
+              const baseR = m.key === "llm_fed" ? 4.6 : 3.5;
+              dot.setAttribute("r", i === rIdx ? baseR + 2.0 : baseR);
+            }
+          }
+        });
+      });
+
+      const tip = document.getElementById("tip-cum");
+      if (tip) {
+        const lead = (node.cum.llm_fed[rIdx] - node.cum.pure_market[rIdx]).toFixed(1);
+        const sign = lead >= 0 ? "+" : "";
+        tip.innerHTML = `
+          <div class="flex items-center justify-between gap-4 border-b border-[var(--border)] pb-1">
+            <span class="font-bold text-[var(--foreground)]">Round ${rIdx + 1} Snapshot</span>
+            <span class="font-semibold tnum" style="color:#0284C7">${sign}${lead} vs Market</span>
+          </div>
+          <div class="space-y-0.5 tnum pt-0.5">
+            <div class="flex justify-between gap-4"><span style="color:#0284C7" class="font-semibold">TokenFed ★</span><span class="font-bold">${node.cum.llm_fed[rIdx].toFixed(1)} val &middot; ${node.pub.llm_fed[rIdx].toFixed(1)}k supply</span></div>
+            <div class="flex justify-between gap-4"><span style="color:#D97706" class="font-medium">Pure Market</span><span>${node.cum.pure_market[rIdx].toFixed(1)} val &middot; ${node.pub.pure_market[rIdx].toFixed(1)}k supply</span></div>
+            <div class="flex justify-between gap-4 text-[var(--muted-foreground)]"><span>Today (Flat)</span><span>${node.cum.flat_today[rIdx].toFixed(1)} val &middot; ${node.pub.flat_today[rIdx].toFixed(1)}k supply</span></div>
+          </div>
+          <div class="text-[var(--muted-foreground)] pt-1 border-t border-[var(--border)] leading-snug max-w-[270px]">
+            ${node.fedNotes[rIdx]}
+          </div>
+        `;
+        tip.style.left = rIdx >= 3 ? "16px" : "auto";
+        tip.style.right = rIdx >= 3 ? "auto" : "155px";
+        tip.classList.remove("hidden");
+      }
+    }
+
+    function clearHover() {
+      ["cum", "sup"].forEach(uid => {
+        const vline = document.getElementById(`${uid}-vline`);
+        if (vline) vline.setAttribute("opacity", "0");
+        SERIES_META.forEach(m => {
+          for (let i = 0; i < 5; i++) {
+            const dot = document.getElementById(`${uid}-dot-${m.key}-${i}`);
+            if (dot) dot.setAttribute("r", m.key === "llm_fed" ? 4.6 : 3.5);
+          }
+        });
+      });
+      const tip = document.getElementById("tip-cum");
+      if (tip) tip.classList.add("hidden");
+    }
+
+    function renderClusterBar(sh) {
+      const [trn, pub, corp, idle] = sh;
+      document.getElementById("cluster-caption").textContent =
+        `${pub}% customer + science · ${trn}% R&D · ${corp}% corp${idle > 0 ? ` · ${idle}% idle` : ""}`;
+      document.getElementById("cluster-bar").innerHTML = `
+        <div style="width:${pub}%; background:#0284C7" class="h-full flex items-center justify-center px-2 text-white truncate transition-all duration-300">
+          Customer + Science (${pub}%)
+        </div>
+        <div style="width:${trn}%; background:#475569" class="h-full flex items-center justify-center px-1.5 text-white truncate border-l border-[var(--border)] transition-all duration-300">
+          R&amp;D (${trn}%)
+        </div>
+        <div style="width:${corp}%; background:#64748B" class="h-full flex items-center justify-center px-1.5 text-white truncate border-l border-[var(--border)] transition-all duration-300">
+          Corp (${corp}%)
+        </div>
+        ${idle > 0 ? `
+          <div style="width:${idle}%" class="h-full bg-[var(--secondary)] text-[var(--muted-foreground)] flex items-center justify-center truncate border-l border-[var(--border)]">
+            ${idle}%
+          </div>
+        ` : ""}
+      `;
+    }
+
+    function renderSectorPanel(rows) {
+      const groups = [
+        {
+          label: "Science & Oncology Labs",
+          tag: "High real value · grant-capped wallet",
+          key: "sci",
+          badge: `+${rows.llm_fed.sci - rows.pure_market.sci} pts vs Market`
+        },
+        {
+          label: "Seed Builder Startups",
+          tag: "High real value · tight initial cash",
+          key: "strt",
+          badge: `+${rows.llm_fed.strt - rows.flat_today.strt} pts vs Today`
+        },
+        {
+          label: "Speculative Swarms",
+          tag: "Low real value · deep cash wallet",
+          key: "swm",
+          badge: "Taxed during surges"
+        }
+      ];
+
+      document.getElementById("sector-panel").innerHTML = groups.map(g => `
+        <div class="space-y-1.5">
+          <div class="flex items-baseline justify-between gap-2">
+            <div>
+              <span class="text-xs font-bold text-[var(--foreground)]">${g.label}</span>
+              <span class="text-xs text-[var(--muted-foreground)] ml-1.5 hidden sm:inline">${g.tag}</span>
+            </div>
+            <span class="text-xs font-semibold tnum" style="color:${g.key === "swm" ? "var(--muted-foreground)" : "#0284C7"}">${g.badge}</span>
+          </div>
+
+          <div class="space-y-1.5">
+            ${SERIES_META.map(sys => {
+              const pct = rows[sys.key][g.key];
+              const isFed = sys.key === "llm_fed";
+              const isSciDrop = sys.key === "pure_market" && g.key === "sci";
+              return `
+                <div class="flex items-center gap-2.5 text-xs tnum">
+                  <span class="w-24 shrink-0 ${isFed ? "font-semibold text-[var(--foreground)]" : "text-[var(--muted-foreground)]"}">${sys.label}</span>
+                  <div class="flex-1 h-3 rounded-full bg-[var(--secondary)] overflow-hidden">
+                    <div style="width:${pct}%; background:${sys.color}; opacity:${isFed ? "1" : "0.78"}"
+                      class="h-full rounded-full transition-all duration-300"></div>
+                  </div>
+                  <span class="w-10 text-right ${isFed || isSciDrop ? "font-bold" : "text-[var(--muted-foreground)]"}"
+                    style="${isSciDrop ? "color:#D97706" : isFed ? "color:#0284C7" : ""}">${pct}%</span>
+                </div>
+              `;
+            }).join("")}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function render() {
+      const node = DATA[scope];
+      document.getElementById("narrative-line").textContent = node.narrative;
+      document.getElementById("table-title").textContent = `Summary Scorecard — ${node.title}`;
+      document.getElementById("win-pill").textContent = node.winBadge;
+
+      renderHeroCards(node);
+
+      buildSplineChart({
+        containerId: "chart-cum",
+        uid: "cum",
+        seriesMap: node.cum,
+        yMax: 116,
+        yTicks: [0, 25, 50, 75, 100],
+        unitSuffix: "",
+        shockBand: node.shockBand,
+        bandTag: node.bandTag,
+        showDirectLabels: true,
+        W: 820,
+        H: 245
+      });
+
+      buildSplineChart({
+        containerId: "chart-supply",
+        uid: "sup",
+        seriesMap: node.pub,
+        yMax: 10.0,
+        yTicks: [0, 3, 6, 9],
+        unitSuffix: "k",
+        shockBand: node.shockBand,
+        bandTag: node.bandTag,
+        showDirectLabels: false,
+        W: 460,
+        H: 195
+      });
+
+      renderClusterBar(node.sh);
+      renderSectorPanel(node.rows);
+
+      document.getElementById("score-tbody").innerHTML = SERIES_META.map(m => {
+        const r = node.rows[m.key];
+        const win = m.key === "llm_fed";
+        return `
+          <tr class="${win ? "font-semibold" : ""} transition-colors hover:bg-[var(--secondary)]"
+              style="${win ? "background:color-mix(in srgb, #0284C7 7%, transparent)" : ""}">
+            <td class="py-2.5 pr-3">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full inline-block shrink-0" style="background:${m.color}"></span>
+                <div>
+                  <div class="${win ? "font-bold" : "font-medium"}">${m.title}</div>
+                  <div class="text-xs text-[var(--muted-foreground)] font-normal">${m.sub}</div>
+                </div>
+              </div>
+            </td>
+            <td class="py-2.5 px-2 text-right text-sm ${win ? "font-bold" : ""}">${r.score.toFixed(1)}</td>
+            <td class="py-2.5 px-2 text-right">${r.hi}%</td>
+            <td class="py-2.5 px-2 text-right font-semibold" style="${m.key === "pure_market" ? "color:#D97706" : win ? "color:#0284C7" : ""}">${r.sci}%</td>
+            <td class="py-2.5 px-2 text-right">${r.strt}%</td>
+            <td class="py-2.5 px-2 text-right">${r.swm}%</td>
+            <td class="py-2.5 pl-2 text-right">${r.idle}%</td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    setScope("overall");
+  </script>
+</body>
+</html>

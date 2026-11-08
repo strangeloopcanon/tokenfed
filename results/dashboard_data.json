@@ -1,0 +1,738 @@
+{
+  "nEpisodes": 48,
+  "models": [
+    "argon",
+    "flash"
+  ],
+  "telemetry": {
+    "total_agy_calls": 4977,
+    "total_output_tokens": 3481221,
+    "total_thinking_tokens": 2326456,
+    "downgraded_calls": 0,
+    "retry_events": 2,
+    "elapsed_wall_seconds": 5439.19
+  },
+  "overall": {
+    "flat_today": {
+      "netVal": 76.8,
+      "extVal": 57.5,
+      "trnVal": 19.3,
+      "defPen": 0.0,
+      "hiPct": 54,
+      "sciPct": 40,
+      "strtPct": 38,
+      "entPct": 83,
+      "swmPct": 37,
+      "testPct": 93,
+      "utilPct": 71,
+      "trainTok": 3345,
+      "borrowed": 0,
+      "margin": "1.00x",
+      "marginNum": 1.0
+    },
+    "pure_market": {
+      "netVal": 88.2,
+      "extVal": 68.8,
+      "trnVal": 19.3,
+      "defPen": 0.0,
+      "hiPct": 64,
+      "sciPct": 29,
+      "strtPct": 69,
+      "entPct": 87,
+      "swmPct": 88,
+      "testPct": 89,
+      "utilPct": 77,
+      "trainTok": 3345,
+      "borrowed": 0,
+      "margin": "1.46x",
+      "marginNum": 1.46
+    },
+    "rule_fed": {
+      "netVal": 94.8,
+      "extVal": 82.2,
+      "trnVal": 12.5,
+      "defPen": 0.0,
+      "hiPct": 75,
+      "sciPct": 50,
+      "strtPct": 74,
+      "entPct": 97,
+      "swmPct": 82,
+      "testPct": 95,
+      "utilPct": 71,
+      "trainTok": 1903,
+      "borrowed": 2362,
+      "margin": "1.21x",
+      "marginNum": 1.21
+    },
+    "llm_fed": {
+      "netVal": 99.6,
+      "extVal": 85.8,
+      "trnVal": 13.8,
+      "defPen": 0.0,
+      "hiPct": 77,
+      "sciPct": 67,
+      "strtPct": 66,
+      "entPct": 96,
+      "swmPct": 79,
+      "testPct": 96,
+      "utilPct": 74,
+      "trainTok": 2177,
+      "borrowed": 5544,
+      "margin": "1.28x",
+      "marginNum": 1.28
+    }
+  },
+  "worlds": {
+    "supply_shock": {
+      "label": "Hardware Crunch",
+      "regimes": {
+        "flat_today": {
+          "netVal": 73.0,
+          "extVal": 55.3,
+          "trnVal": 17.8,
+          "defPen": 0.0,
+          "hiPct": 51,
+          "sciPct": 47,
+          "strtPct": 25,
+          "entPct": 75,
+          "swmPct": 31,
+          "testPct": 91,
+          "utilPct": 70,
+          "trainTok": 3013,
+          "borrowed": 0,
+          "margin": "1.00x",
+          "marginNum": 1.0
+        },
+        "pure_market": {
+          "netVal": 73.3,
+          "extVal": 55.5,
+          "trnVal": 17.8,
+          "defPen": 0.0,
+          "hiPct": 53,
+          "sciPct": 17,
+          "strtPct": 52,
+          "entPct": 77,
+          "swmPct": 67,
+          "testPct": 86,
+          "utilPct": 71,
+          "trainTok": 3013,
+          "borrowed": 0,
+          "margin": "1.60x",
+          "marginNum": 1.6
+        },
+        "rule_fed": {
+          "netVal": 86.3,
+          "extVal": 74.4,
+          "trnVal": 12.0,
+          "defPen": 0.0,
+          "hiPct": 69,
+          "sciPct": 53,
+          "strtPct": 54,
+          "entPct": 93,
+          "swmPct": 50,
+          "testPct": 91,
+          "utilPct": 66,
+          "trainTok": 1782,
+          "borrowed": 2588,
+          "margin": "1.30x",
+          "marginNum": 1.3
+        },
+        "llm_fed": {
+          "netVal": 86.9,
+          "extVal": 74.0,
+          "trnVal": 12.9,
+          "defPen": 0.0,
+          "hiPct": 69,
+          "sciPct": 56,
+          "strtPct": 54,
+          "entPct": 89,
+          "swmPct": 50,
+          "testPct": 90,
+          "utilPct": 70,
+          "trainTok": 1982,
+          "borrowed": 4106,
+          "margin": "1.37x",
+          "marginNum": 1.37
+        }
+      }
+    },
+    "slop_bubble": {
+      "label": "Slop Bubble",
+      "regimes": {
+        "flat_today": {
+          "netVal": 74.9,
+          "extVal": 54.6,
+          "trnVal": 20.3,
+          "defPen": 0.0,
+          "hiPct": 56,
+          "sciPct": 36,
+          "strtPct": 46,
+          "entPct": 84,
+          "swmPct": 36,
+          "testPct": 92,
+          "utilPct": 72,
+          "trainTok": 3539,
+          "borrowed": 0,
+          "margin": "1.00x",
+          "marginNum": 1.0
+        },
+        "pure_market": {
+          "netVal": 93.9,
+          "extVal": 73.7,
+          "trnVal": 20.3,
+          "defPen": 0.0,
+          "hiPct": 70,
+          "sciPct": 47,
+          "strtPct": 71,
+          "entPct": 86,
+          "swmPct": 98,
+          "testPct": 89,
+          "utilPct": 82,
+          "trainTok": 3539,
+          "borrowed": 0,
+          "margin": "1.60x",
+          "marginNum": 1.6
+        },
+        "rule_fed": {
+          "netVal": 95.8,
+          "extVal": 83.2,
+          "trnVal": 12.6,
+          "defPen": 0.0,
+          "hiPct": 80,
+          "sciPct": 56,
+          "strtPct": 81,
+          "entPct": 98,
+          "swmPct": 96,
+          "testPct": 99,
+          "utilPct": 78,
+          "trainTok": 1907,
+          "borrowed": 3050,
+          "margin": "1.21x",
+          "marginNum": 1.21
+        },
+        "llm_fed": {
+          "netVal": 103.8,
+          "extVal": 87.9,
+          "trnVal": 15.8,
+          "defPen": 0.0,
+          "hiPct": 82,
+          "sciPct": 83,
+          "strtPct": 67,
+          "entPct": 98,
+          "swmPct": 88,
+          "testPct": 100,
+          "utilPct": 81,
+          "trainTok": 2595,
+          "borrowed": 8838,
+          "margin": "1.43x",
+          "marginNum": 1.43
+        }
+      }
+    },
+    "innovation_boom": {
+      "label": "Science & Startup Boom",
+      "regimes": {
+        "flat_today": {
+          "netVal": 82.5,
+          "extVal": 62.5,
+          "trnVal": 20.0,
+          "defPen": 0.0,
+          "hiPct": 55,
+          "sciPct": 38,
+          "strtPct": 42,
+          "entPct": 91,
+          "swmPct": 44,
+          "testPct": 95,
+          "utilPct": 71,
+          "trainTok": 3483,
+          "borrowed": 0,
+          "margin": "1.00x",
+          "marginNum": 1.0
+        },
+        "pure_market": {
+          "netVal": 97.2,
+          "extVal": 77.3,
+          "trnVal": 20.0,
+          "defPen": 0.0,
+          "hiPct": 68,
+          "sciPct": 23,
+          "strtPct": 83,
+          "entPct": 98,
+          "swmPct": 100,
+          "testPct": 91,
+          "utilPct": 77,
+          "trainTok": 3483,
+          "borrowed": 0,
+          "margin": "1.18x",
+          "marginNum": 1.18
+        },
+        "rule_fed": {
+          "netVal": 102.2,
+          "extVal": 89.1,
+          "trnVal": 13.1,
+          "defPen": 0.0,
+          "hiPct": 76,
+          "sciPct": 42,
+          "strtPct": 87,
+          "entPct": 100,
+          "swmPct": 100,
+          "testPct": 95,
+          "utilPct": 69,
+          "trainTok": 2020,
+          "borrowed": 1450,
+          "margin": "1.12x",
+          "marginNum": 1.12
+        },
+        "llm_fed": {
+          "netVal": 108.1,
+          "extVal": 95.4,
+          "trnVal": 12.8,
+          "defPen": 0.0,
+          "hiPct": 80,
+          "sciPct": 62,
+          "strtPct": 78,
+          "entPct": 100,
+          "swmPct": 100,
+          "testPct": 99,
+          "utilPct": 72,
+          "trainTok": 1952,
+          "borrowed": 3688,
+          "margin": "1.04x",
+          "marginNum": 1.04
+        }
+      }
+    }
+  },
+  "byModel": {
+    "argon": {
+      "flat_today": {
+        "netVal": 78.1,
+        "extVal": 58.8,
+        "trnVal": 19.3,
+        "defPen": 0.0,
+        "hiPct": 54,
+        "sciPct": 46,
+        "strtPct": 40,
+        "entPct": 79,
+        "swmPct": 38,
+        "testPct": 93,
+        "utilPct": 72,
+        "trainTok": 3345,
+        "borrowed": 0,
+        "margin": "1.00x",
+        "marginNum": 1.0
+      },
+      "pure_market": {
+        "netVal": 89.1,
+        "extVal": 69.8,
+        "trnVal": 19.3,
+        "defPen": 0.0,
+        "hiPct": 64,
+        "sciPct": 27,
+        "strtPct": 76,
+        "entPct": 81,
+        "swmPct": 85,
+        "testPct": 89,
+        "utilPct": 80,
+        "trainTok": 3345,
+        "borrowed": 0,
+        "margin": "1.19x",
+        "marginNum": 1.19
+      },
+      "rule_fed": {
+        "netVal": 90.0,
+        "extVal": 77.3,
+        "trnVal": 12.7,
+        "defPen": 0.0,
+        "hiPct": 72,
+        "sciPct": 34,
+        "strtPct": 77,
+        "entPct": 97,
+        "swmPct": 81,
+        "testPct": 98,
+        "utilPct": 71,
+        "trainTok": 1927,
+        "borrowed": 2533,
+        "margin": "1.14x",
+        "marginNum": 1.14
+      },
+      "llm_fed": {
+        "netVal": 101.3,
+        "extVal": 89.2,
+        "trnVal": 12.1,
+        "defPen": 0.0,
+        "hiPct": 80,
+        "sciPct": 67,
+        "strtPct": 72,
+        "entPct": 97,
+        "swmPct": 80,
+        "testPct": 99,
+        "utilPct": 75,
+        "trainTok": 1818,
+        "borrowed": 5688,
+        "margin": "1.10x",
+        "marginNum": 1.1
+      }
+    },
+    "flash": {
+      "flat_today": {
+        "netVal": 75.5,
+        "extVal": 56.2,
+        "trnVal": 19.3,
+        "defPen": 0.0,
+        "hiPct": 53,
+        "sciPct": 35,
+        "strtPct": 35,
+        "entPct": 88,
+        "swmPct": 36,
+        "testPct": 93,
+        "utilPct": 70,
+        "trainTok": 3345,
+        "borrowed": 0,
+        "margin": "1.00x",
+        "marginNum": 1.0
+      },
+      "pure_market": {
+        "netVal": 87.2,
+        "extVal": 67.9,
+        "trnVal": 19.3,
+        "defPen": 0.0,
+        "hiPct": 63,
+        "sciPct": 31,
+        "strtPct": 61,
+        "entPct": 93,
+        "swmPct": 91,
+        "testPct": 88,
+        "utilPct": 73,
+        "trainTok": 3345,
+        "borrowed": 0,
+        "margin": "1.73x",
+        "marginNum": 1.73
+      },
+      "rule_fed": {
+        "netVal": 99.5,
+        "extVal": 87.1,
+        "trnVal": 12.4,
+        "defPen": 0.0,
+        "hiPct": 78,
+        "sciPct": 66,
+        "strtPct": 71,
+        "entPct": 96,
+        "swmPct": 83,
+        "testPct": 92,
+        "utilPct": 72,
+        "trainTok": 1879,
+        "borrowed": 2192,
+        "margin": "1.29x",
+        "marginNum": 1.29
+      },
+      "llm_fed": {
+        "netVal": 97.9,
+        "extVal": 82.3,
+        "trnVal": 15.5,
+        "defPen": 0.0,
+        "hiPct": 74,
+        "sciPct": 67,
+        "strtPct": 61,
+        "entPct": 94,
+        "swmPct": 79,
+        "testPct": 93,
+        "utilPct": 73,
+        "trainTok": 2535,
+        "borrowed": 5400,
+        "margin": "1.46x",
+        "marginNum": 1.46
+      }
+    }
+  },
+  "paired": {
+    "llm_fed_vs_flat_today": {
+      "n_pairs": 12,
+      "wins": 12,
+      "ties": 0,
+      "net_value_diff": {
+        "mean": 22.781,
+        "sd": 9.598,
+        "ci95": [
+          17.617,
+          27.589
+        ]
+      },
+      "high_impact_pct_diff": {
+        "mean": 22.88,
+        "sd": 8.262,
+        "ci95": [
+          18.339,
+          27.347
+        ]
+      },
+      "science_pct_diff": {
+        "mean": 26.853,
+        "sd": 22.828,
+        "ci95": [
+          13.888,
+          38.893
+        ]
+      }
+    },
+    "llm_fed_vs_pure_market": {
+      "n_pairs": 12,
+      "wins": 12,
+      "ties": 0,
+      "net_value_diff": {
+        "mean": 11.435,
+        "sd": 5.224,
+        "ci95": [
+          8.4,
+          14.096
+        ]
+      },
+      "high_impact_pct_diff": {
+        "mean": 13.134,
+        "sd": 5.552,
+        "ci95": [
+          10.245,
+          16.229
+        ]
+      },
+      "science_pct_diff": {
+        "mean": 38.195,
+        "sd": 6.281,
+        "ci95": [
+          34.955,
+          41.667
+        ]
+      }
+    },
+    "llm_fed_vs_rule_fed": {
+      "n_pairs": 12,
+      "wins": 7,
+      "ties": 0,
+      "net_value_diff": {
+        "mean": 4.83,
+        "sd": 9.491,
+        "ci95": [
+          -0.236,
+          9.978
+        ]
+      },
+      "high_impact_pct_diff": {
+        "mean": 1.64,
+        "sd": 8.397,
+        "ci95": [
+          -2.968,
+          6.202
+        ]
+      },
+      "science_pct_diff": {
+        "mean": 17.131,
+        "sd": 23.237,
+        "ci95": [
+          5.556,
+          30.328
+        ]
+      }
+    },
+    "rule_fed_vs_pure_market": {
+      "n_pairs": 12,
+      "wins": 9,
+      "ties": 0,
+      "net_value_diff": {
+        "mean": 6.606,
+        "sd": 10.92,
+        "ci95": [
+          0.536,
+          12.161
+        ]
+      },
+      "high_impact_pct_diff": {
+        "mean": 11.494,
+        "sd": 8.586,
+        "ci95": [
+          6.818,
+          15.978
+        ]
+      },
+      "science_pct_diff": {
+        "mean": 21.064,
+        "sd": 22.584,
+        "ci95": [
+          8.332,
+          32.408
+        ]
+      }
+    },
+    "pure_market_vs_flat_today": {
+      "n_pairs": 12,
+      "wins": 11,
+      "ties": 0,
+      "net_value_diff": {
+        "mean": 11.346,
+        "sd": 10.912,
+        "ci95": [
+          5.337,
+          16.508
+        ]
+      },
+      "high_impact_pct_diff": {
+        "mean": 9.746,
+        "sd": 9.092,
+        "ci95": [
+          4.613,
+          14.175
+        ]
+      },
+      "science_pct_diff": {
+        "mean": -11.342,
+        "sd": 22.175,
+        "ci95": [
+          -24.073,
+          0.233
+        ]
+      }
+    }
+  },
+  "fomc": {
+    "supply_shock": [
+      {
+        "round": 1,
+        "training_tokens": 2500,
+        "clearing_spot": 1.65,
+        "science_mult": 0.65,
+        "science_cap_tokens": 2144,
+        "startup_credit_line": 850.0,
+        "statement": "We release moderate internal training capacity above the core safety threshold, extend targeted startup working-capital credit and ring-fenced science access, and apply a modest commercial spot surcharge to preserve fiscal balance while cap"
+      },
+      {
+        "round": 2,
+        "training_tokens": 1400,
+        "clearing_spot": 3.45,
+        "science_mult": 0.55,
+        "science_cap_tokens": 1500,
+        "startup_credit_line": 1350.0,
+        "statement": "Facing an acute cluster supply contraction to 7,600 tokens, the Committee is paring internal training to the 1,400-token safety floor to maximize public inference capacity, hiking the commercial spot surcharge to curb cash-rich speculative "
+      },
+      {
+        "round": 3,
+        "training_tokens": 1400,
+        "clearing_spot": 3.6,
+        "science_mult": 0.45,
+        "science_cap_tokens": 1672,
+        "startup_credit_line": 1400.0,
+        "statement": "Facing a severe cluster supply contraction to 8,000 tokens and intense commercial demand pressure, we pare internal training to the 1,400-token safety floor to release compute for high-value inference, raise the commercial spot surcharge to"
+      },
+      {
+        "round": 4,
+        "training_tokens": 1400,
+        "clearing_spot": 2.43,
+        "science_mult": 0.55,
+        "science_cap_tokens": 4218,
+        "startup_credit_line": 1400.0,
+        "statement": "With extreme high-impact demand from verified startups (9 tickets, 6 urgent) and accredited science (6 tickets, 3 urgent) far exceeding public capacity, we pare internal training down to the 1,400-token critical safety floor to maximize pub"
+      },
+      {
+        "round": 5,
+        "training_tokens": 1400,
+        "clearing_spot": 2.46,
+        "science_mult": 0.65,
+        "science_cap_tokens": 3648,
+        "startup_credit_line": 1400.0,
+        "statement": "In the final round, we release core internal training capacity down to the 1,400-token safety floor to relieve acute urgent demand across verified startups and accredited science, paired with full startup liquidity lines, ring-fenced scienc"
+      }
+    ],
+    "slop_bubble": [
+      {
+        "round": 1,
+        "training_tokens": 3600,
+        "clearing_spot": 2.14,
+        "science_mult": 0.65,
+        "science_cap_tokens": 1680,
+        "startup_credit_line": 950.0,
+        "statement": "We are fully funding core internal R&D up to the 3,600-token threshold while extending working-capital credit to liquidity-constrained startups, ring-fencing discounted science capacity, and applying a modest spot surcharge on cash-rich urg"
+      },
+      {
+        "round": 2,
+        "training_tokens": 1800,
+        "clearing_spot": 2.32,
+        "science_mult": 0.55,
+        "science_cap_tokens": 3745,
+        "startup_credit_line": 1250.0,
+        "statement": "With high-impact startup and scientific demand heavily backlogged and priced out by cash-rich commercial traffic, we are temporarily reallocating internal training capacity above the critical safety floor to the public pool, expanding liqui"
+      },
+      {
+        "round": 3,
+        "training_tokens": 1400,
+        "clearing_spot": 2.65,
+        "science_mult": 0.55,
+        "science_cap_tokens": 3996,
+        "startup_credit_line": 1400.0,
+        "statement": "With high-value startup and science demand severely crowded out by cash-rich commercial surges (3.06x demand/supply), we release internal training capacity down to the 1,400-token safety floor, levy a +0.65 spot surcharge on general commerc"
+      },
+      {
+        "round": 4,
+        "training_tokens": 1400,
+        "clearing_spot": 2.75,
+        "science_mult": 0.55,
+        "science_cap_tokens": 3800,
+        "startup_credit_line": 1400.0,
+        "statement": "To reverse the severe crowding-out of verified startups and accredited science by cash-rich general commercial demand, we are releasing non-critical internal training capacity down to the 1,400-token safety floor, maximizing the science rin"
+      },
+      {
+        "round": 5,
+        "training_tokens": 1400,
+        "clearing_spot": 1.75,
+        "science_mult": 0.35,
+        "science_cap_tokens": 3230,
+        "startup_credit_line": 1400.0,
+        "statement": "With a strong 1.19x fiscal buffer in the final round and a surge of 9 urgent startup and science breakthroughs previously throttled by high spot prices, we release internal training capacity down to the 1,400-token safety floor, deploy maxi"
+      }
+    ],
+    "innovation_boom": [
+      {
+        "round": 1,
+        "training_tokens": 2800,
+        "clearing_spot": 1.61,
+        "science_mult": 0.7,
+        "science_cap_tokens": 2304,
+        "startup_credit_line": 900.0,
+        "statement": "With public demand at 1.60x baseline supply and startup liquidity constrained, we modestly release marginal internal training capacity, extend a targeted 900-credit startup facility, ring-fence accredited science, and apply a +0.15 spot sur"
+      },
+      {
+        "round": 2,
+        "training_tokens": 1650,
+        "clearing_spot": 2.16,
+        "science_mult": 0.5,
+        "science_cap_tokens": 3258,
+        "startup_credit_line": 1200.0,
+        "statement": "With high-impact verified startup and accredited science demand surging against a reduced 11,800-token cluster, we are releasing non-critical internal training capacity into the public pool, expanding the ring-fenced science allocation at a"
+      },
+      {
+        "round": 3,
+        "training_tokens": 1400,
+        "clearing_spot": 2.36,
+        "science_mult": 0.65,
+        "science_cap_tokens": 3534,
+        "startup_credit_line": 1000.0,
+        "statement": "To relieve severe capacity starvation for high-value startups and science labs while curbing cash-rich commercial crowding-out and preserving our 1.08x fiscal buffer, we are releasing internal training capacity above the 1,400-token safety "
+      },
+      {
+        "round": 4,
+        "training_tokens": 1400,
+        "clearing_spot": 1.99,
+        "science_mult": 0.45,
+        "science_cap_tokens": 2964,
+        "startup_credit_line": 1400.0,
+        "statement": "With zero speculative commercial demand and a massive backlog of urgent verified startup and accredited science breakthroughs, we release internal capability-training capacity above the 1,400-token safety floor to the public pool, eliminate"
+      },
+      {
+        "round": 5,
+        "training_tokens": 1400,
+        "clearing_spot": 1.24,
+        "science_mult": 0.55,
+        "science_cap_tokens": 3382,
+        "startup_credit_line": 1000.0,
+        "statement": "With zero speculative general-commercial demand and urgent final-round bottlenecks in high-value startup and science queues, we release internal training capacity down to the 1,400-token safety floor, cut the spot surcharge to -0.25, and ma"
+      }
+    ]
+  }
+}
